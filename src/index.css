@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  --ink: #202621;
+  --paper: #f1eee4;
+  --green: #445d4f;
+  --sage: #96a98e;
+  --line: #cecec5;
+  --sans: 'DM Sans', sans-serif;
+  --serif: 'Instrument Serif', serif;
+  --mono: 'DM Mono', monospace;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(rgb(32 38 33 / .018) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(32 38 33 / .018) 1px, transparent 1px),
+    var(--paper);
+  background-size: 36px 36px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--green);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid #a6bd9c;
+  outline-offset: 4px;
+}
+
+#root {
+  min-height: 100vh;
+}
