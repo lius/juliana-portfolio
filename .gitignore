@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-portfolio*-preview.png
+portfolio*.png
 
 # Editor directories and files
 .vscode/*
