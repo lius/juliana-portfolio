@@ -204,8 +204,8 @@ function App() {
             em todas as etapas do processo.</span>
           </h2>
           <div>
-            <a className="primary-button" href="mailto:julianarquiteta@gmail.com?subject=Solicitação%20de%20currículo">
-              Solicitar currículo <Icon name="arrow" />
+            <a className="primary-button" href="/Curriculo-Juliana-Romero.pdf" download>
+              Baixar currículo <Icon name="arrow" />
             </a>
             <a className="text-link" href="#projetos">Ver projetos</a>
           </div>

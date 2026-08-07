@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currículo — Juliana Romero</title>
+    <style>
+      :root {
+        --ink: #1d2521;
+        --muted: #657069;
+        --accent: #526b5c;
+        --accent-soft: #e7ece7;
+        --line: #cbd1cc;
+        --paper: #fff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: #d8dbd8;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #d8dbd8;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9.25pt;
+        line-height: 1.42;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        position: relative;
+        width: 210mm;
+        min-height: 297mm;
+        margin: 10mm auto;
+        padding: 13mm 15mm 12mm;
+        overflow: hidden;
+        background: var(--paper);
+        box-shadow: 0 8px 36px rgb(26 35 30 / 0.16);
+      }
+
+      .page::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 4mm;
+        background: var(--accent);
+        content: '';
+      }
+
+      .masthead {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 12mm;
+        border-bottom: 0.35mm solid var(--ink);
+        padding: 5mm 0 5mm;
+      }
+
+      .name {
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 29pt;
+        font-weight: 400;
+        letter-spacing: -0.8pt;
+        line-height: 1;
+      }
+
+      .professional-title {
+        margin: 2.5mm 0 0;
+        color: var(--accent);
+        font-size: 8.7pt;
+        font-weight: 700;
+        letter-spacing: 0.75pt;
+        text-transform: uppercase;
+      }
+
+      .location {
+        padding-bottom: 0.6mm;
+        color: var(--muted);
+        font-size: 8pt;
+        letter-spacing: 0.3pt;
+        text-align: right;
+        text-transform: uppercase;
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: 1fr 1.35fr 1.8fr;
+        gap: 4mm;
+        border-bottom: 0.2mm solid var(--line);
+        padding: 3mm 0;
+        color: var(--muted);
+        font-size: 7.8pt;
+      }
+
+      .contact a:last-child {
+        color: var(--accent);
+        font-weight: 700;
+        text-align: right;
+      }
+
+      .section {
+        margin-top: 5mm;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 3mm;
+        margin: 0 0 3mm;
+        color: var(--accent);
+        font-size: 7.3pt;
+        font-weight: 700;
+        letter-spacing: 1.15pt;
+        text-transform: uppercase;
+      }
+
+      .section-title::after {
+        height: 0.2mm;
+        flex: 1;
+        background: var(--line);
+        content: '';
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: 1fr 35mm;
+        gap: 8mm;
+        align-items: start;
+      }
+
+      .summary p {
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 11.1pt;
+        line-height: 1.42;
+      }
+
+      .summary p strong {
+        color: var(--accent);
+        font-weight: 400;
+      }
+
+      .summary-note {
+        border-left: 0.5mm solid var(--accent);
+        padding-left: 4mm;
+      }
+
+      .summary-note strong {
+        display: block;
+        font-size: 20pt;
+        font-weight: 500;
+        letter-spacing: -1pt;
+        line-height: 1;
+      }
+
+      .summary-note span {
+        display: block;
+        margin-top: 1mm;
+        color: var(--muted);
+        font-size: 7pt;
+        letter-spacing: 0.65pt;
+        line-height: 1.3;
+        text-transform: uppercase;
+      }
+
+      .competencies {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border: 0.2mm solid var(--line);
+      }
+
+      .competencies span {
+        min-height: 11mm;
+        padding: 2.7mm 3mm;
+        font-size: 7.6pt;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .competencies span:not(:nth-child(4n)) {
+        border-right: 0.2mm solid var(--line);
+      }
+
+      .competencies span:nth-child(n + 5) {
+        border-top: 0.2mm solid var(--line);
+      }
+
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 0.35mm solid var(--ink);
+        border-bottom: 0.35mm solid var(--ink);
+      }
+
+      .project {
+        min-height: 39mm;
+        padding: 3.5mm 4mm 3.5mm 0;
+      }
+
+      .project + .project {
+        border-left: 0.2mm solid var(--line);
+        padding-left: 4mm;
+      }
+
+      .project-label {
+        color: var(--accent);
+        font-size: 6.7pt;
+        font-weight: 700;
+        letter-spacing: 0.7pt;
+        text-transform: uppercase;
+      }
+
+      .project h3 {
+        margin: 1.6mm 0 1.4mm;
+        font-size: 10.3pt;
+        line-height: 1.2;
+      }
+
+      .project p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 7.35pt;
+        line-height: 1.4;
+      }
+
+      .project small {
+        display: block;
+        margin-top: 2mm;
+        color: var(--ink);
+        font-size: 6.5pt;
+        font-weight: 700;
+      }
+
+      .experience {
+        margin-top: 0;
+      }
+
+      .job {
+        display: grid;
+        grid-template-columns: 39mm 1fr;
+        gap: 5mm;
+        border-bottom: 0.2mm solid var(--line);
+        padding: 3.2mm 0;
+        break-inside: avoid;
+      }
+
+      .job-meta span {
+        display: block;
+        color: var(--accent);
+        font-size: 7pt;
+        font-weight: 700;
+        letter-spacing: 0.45pt;
+      }
+
+      .job-meta strong {
+        display: block;
+        margin-top: 1mm;
+        font-size: 8pt;
+      }
+
+      .job-content h3 {
+        margin: 0 0 1.2mm;
+        font-size: 10pt;
+      }
+
+      .job-content ul {
+        margin: 0;
+        padding-left: 4mm;
+        color: var(--muted);
+        font-size: 7.7pt;
+      }
+
+      .job-content li + li {
+        margin-top: 0.8mm;
+      }
+
+      .continued-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.35mm solid var(--ink);
+        padding: 5mm 0 3mm;
+      }
+
+      .continued-header strong {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 16pt;
+        font-weight: 400;
+      }
+
+      .continued-header span {
+        color: var(--accent);
+        font-size: 7pt;
+        font-weight: 700;
+        letter-spacing: 0.7pt;
+        text-transform: uppercase;
+      }
+
+      .bottom-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8mm;
+        margin-top: 5mm;
+      }
+
+      .education-item,
+      .certificate-item {
+        border-bottom: 0.2mm solid var(--line);
+        padding: 0 0 2.5mm;
+      }
+
+      .education-item + .education-item,
+      .certificate-item + .certificate-item {
+        margin-top: 2.5mm;
+      }
+
+      .education-item h3,
+      .certificate-item h3 {
+        margin: 0;
+        font-size: 8.8pt;
+      }
+
+      .education-item p,
+      .certificate-item p {
+        margin: 0.7mm 0 0;
+        color: var(--muted);
+        font-size: 7.3pt;
+      }
+
+      .toolbox {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 8mm;
+        margin-top: 5mm;
+        border: 0.35mm solid var(--ink);
+        padding: 4mm;
+      }
+
+      .toolbox h3 {
+        margin: 0 0 2mm;
+        color: var(--accent);
+        font-size: 7pt;
+        letter-spacing: 0.8pt;
+        text-transform: uppercase;
+      }
+
+      .toolbox p {
+        margin: 0;
+        font-size: 8pt;
+        line-height: 1.5;
+      }
+
+      .representative-work {
+        margin-top: 5mm;
+      }
+
+      .representative-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 0.35mm solid var(--ink);
+        border-bottom: 0.35mm solid var(--ink);
+      }
+
+      .representative-grid article {
+        min-height: 34mm;
+        padding: 3.5mm 4mm 3.5mm 0;
+      }
+
+      .representative-grid article + article {
+        border-left: 0.2mm solid var(--line);
+        padding-left: 4mm;
+      }
+
+      .representative-grid h3 {
+        margin: 0 0 1.5mm;
+        color: var(--accent);
+        font-size: 7pt;
+        letter-spacing: 0.65pt;
+        text-transform: uppercase;
+      }
+
+      .representative-grid p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 7.35pt;
+        line-height: 1.45;
+      }
+
+      .footer {
+        position: absolute;
+        right: 15mm;
+        bottom: 6mm;
+        left: 15mm;
+        display: flex;
+        justify-content: space-between;
+        color: #909792;
+        font-size: 6.5pt;
+        letter-spacing: 0.45pt;
+        text-transform: uppercase;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        html,
+        body {
+          background: white;
+        }
+
+        .page {
+          width: 210mm;
+          height: 297mm;
+          min-height: 297mm;
+          margin: 0;
+          box-shadow: none;
+          break-after: page;
+        }
+
+        .page:last-child {
+          break-after: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="page">
+      <header class="masthead">
+        <div>
+          <h1 class="name">Juliana Romero</h1>
+          <p class="professional-title">Arquiteta · Arquitetura hospitalar · Compatibilização · Gestão de projetos</p>
+        </div>
+        <div class="location">São Paulo — SP</div>
+      </header>
+
+      <div class="contact">
+        <a href="tel:+5585999090952">+55 85 99909-0952</a>
+        <a href="mailto:julianarquiteta@gmail.com">julianarquiteta@gmail.com</a>
+        <a href="https://juliana-romero-arquitetura.netlify.app">juliana-romero-arquitetura.netlify.app</a>
+      </div>
+
+      <section class="section">
+        <h2 class="section-title">Perfil profissional</h2>
+        <div class="summary">
+          <p>Arquiteta com atuação em construtoras, incorporadoras e setor público, especializada em <strong>projetos hospitalares, coordenação multidisciplinar e compatibilização</strong>. Experiência do estudo preliminar ao projeto executivo, incluindo viabilidade, documentação técnica, orçamento e suporte à obra.</p>
+          <div class="summary-note">
+            <strong>18+</strong>
+            <span>anos transformando complexidade em projetos executáveis</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Competências-chave</h2>
+        <div class="competencies">
+          <span>Arquitetura hospitalar</span>
+          <span>Coordenação multidisciplinar</span>
+          <span>Compatibilização BIM</span>
+          <span>Viabilidade técnica</span>
+          <span>Projeto básico e executivo</span>
+          <span>Aprovação em órgãos públicos</span>
+          <span>Orçamento e cronograma</span>
+          <span>Acompanhamento de obra</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Projetos e resultados em destaque</h2>
+        <div class="projects">
+          <article class="project">
+            <span class="project-label">Saúde</span>
+            <h3>UTI, Centro Cirúrgico e Centro de Imagem</h3>
+            <p>Desenvolvimento e coordenação de projetos hospitalares, conciliando disciplinas, requisitos sanitários e execução.</p>
+            <small>SEINFRA Aracati · 2020—2023</small>
+          </article>
+          <article class="project">
+            <span class="project-label">Habitação</span>
+            <h3>Empreendimentos de interesse social</h3>
+            <p>Análise de viabilidade técnica e gestão da documentação para contratação de empreendimentos no estado de São Paulo.</p>
+            <small>CDHU · 2024—2025</small>
+          </article>
+          <article class="project">
+            <span class="project-label">Reconhecimento</span>
+            <h3>Antiga Fábrica São José</h3>
+            <p>Proposta de requalificação para uso habitacional reconhecida com menção honrosa no concurso nacional Opera Prima.</p>
+            <small>Opera Prima · 2008</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="section experience">
+        <h2 class="section-title">Experiência profissional</h2>
+
+        <article class="job">
+          <div class="job-meta">
+            <span>2024—2025</span>
+            <strong>CDHU</strong>
+          </div>
+          <div class="job-content">
+            <h3>Arquiteta Pleno</h3>
+            <ul>
+              <li>Análise de viabilidade técnica e gerenciamento da documentação apresentada por incorporadores.</li>
+              <li>Avaliação de empreendimentos habitacionais de interesse social para contratação no estado de São Paulo.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-meta">
+            <span>2020—2023</span>
+            <strong>SEINFRA Aracati</strong>
+          </div>
+          <div class="job-content">
+            <h3>Arquiteta Pleno</h3>
+            <ul>
+              <li>Desenvolvimento de projetos multidisciplinares de arquitetura hospitalar, bibliotecas, praças e pavimentação.</li>
+              <li>Coordenação de projeto básico e executivo, orçamento hospitalar, documentação legal e suporte técnico à obra.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-meta">
+            <span>2015—2018</span>
+            <strong>Magis Incorporações</strong>
+          </div>
+          <div class="job-content">
+            <h3>Arquiteta Pleno</h3>
+            <ul>
+              <li>Compatibilização de arquitetura e projetos complementares em empreendimentos residenciais e comerciais de médio e alto padrão.</li>
+              <li>Estudos de viabilidade, orçamentos, gestão de contratos, interiores, memoriais e acompanhamento de obra.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <div class="footer">
+        <span>Juliana Romero · Currículo profissional</span>
+        <span>1 / 2</span>
+      </div>
+    </article>
+
+    <article class="page">
+      <header class="continued-header">
+        <strong>Juliana Romero</strong>
+        <span>Experiência profissional · Continuação</span>
+      </header>
+
+      <section class="experience">
+        <article class="job">
+          <div class="job-meta">
+            <span>2014—2015</span>
+            <strong>JV Engenharia</strong>
+          </div>
+          <div class="job-content">
+            <h3>Coordenadora de Projetos</h3>
+            <ul>
+              <li>Coordenação de arquitetura e projetos complementares da concepção ao executivo para empreendimentos residenciais.</li>
+              <li>Gestão de cronogramas, contratos, processos para PBQP-H, recrutamento técnico e ciclos de feedback.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-meta">
+            <span>2013—2014</span>
+            <strong>JVS Engenharia</strong>
+          </div>
+          <div class="job-content">
+            <h3>Arquiteta Pleno</h3>
+            <ul>
+              <li>Estudos de viabilidade, projeto legal e executivo, detalhamento, as built e interiores.</li>
+              <li>Compatibilização de arquitetura, estrutura e instalações, além de orçamento, quantitativos e suporte à obra.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-meta">
+            <span>2011—2012</span>
+            <strong>Escritório Cézar Fiuza</strong>
+          </div>
+          <div class="job-content">
+            <h3>Arquiteta Projetista</h3>
+            <ul>
+              <li>Projetos de interiores residenciais, corporativos e comerciais, da concepção ao detalhamento.</li>
+              <li>Desenvolvimento de iluminação e mobiliário para restaurantes, clínicas e ambientes profissionais.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-meta">
+            <span>2007—2011</span>
+            <strong>CRD Engenharia</strong>
+          </div>
+          <div class="job-content">
+            <h3>Arquiteta Orçamentista</h3>
+            <ul>
+              <li>Orçamentos e quantitativos para projetos residenciais e loteamentos urbanos.</li>
+              <li>Implantação do sistema Informacon e colaboração na certificação PBQP-H do setor técnico.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <div class="bottom-grid">
+        <section>
+          <h2 class="section-title">Formação acadêmica</h2>
+          <div class="education-item">
+            <h3>Mestrado em Ciências da Cidade</h3>
+            <p>UNIFOR · 2018—2019</p>
+          </div>
+          <div class="education-item">
+            <h3>Pós-graduação em Iluminação e Design de Interiores</h3>
+            <p>IPOG · 2011—2015</p>
+          </div>
+          <div class="education-item">
+            <h3>Arquitetura e Urbanismo</h3>
+            <p>UNIFOR · 2001—2007</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">Formação complementar</h2>
+          <div class="certificate-item">
+            <h3>Arquitetura para a Saúde</h3>
+            <p>TAPS · 2022—2023</p>
+          </div>
+          <div class="certificate-item">
+            <h3>Revit Arquitetura Profissional</h3>
+            <p>Portal Educacional Revit · 2023—2024</p>
+          </div>
+          <div class="certificate-item">
+            <h3>Revit Starter Arquitetura</h3>
+            <p>Portal Educacional Revit · 2023—2024</p>
+          </div>
+        </section>
+      </div>
+
+      <section class="toolbox">
+        <div>
+          <h3>Ferramentas</h3>
+          <p>Revit · AutoCAD · SketchUp · Navisworks · V-Ray · AutoDoc · MS Project · Informacon · Project Builder · Pacote Office</p>
+        </div>
+        <div>
+          <h3>Idiomas</h3>
+          <p>Inglês fluente<br />Espanhol básico</p>
+        </div>
+      </section>
+
+      <section class="representative-work">
+        <h2 class="section-title">Projetos e contextos representativos</h2>
+        <div class="representative-grid">
+          <article>
+            <h3>Saúde &amp; setor público</h3>
+            <p>UTI adulto, Centro Cirúrgico, Centro de Imagem, Biblioteca Pública Municipal, Praça PET e Praça da Família.</p>
+          </article>
+          <article>
+            <h3>Residencial &amp; incorporação</h3>
+            <p>MOMA, Lago Di Fátima, Aquarela, Monte Parnasso, Cartago e Monte Horebe.</p>
+          </article>
+          <article>
+            <h3>Processos técnicos</h3>
+            <p>Compatibilização, PBQP-H, aprovação sanitária, as built, memoriais, quantitativos, orçamento e suporte à obra.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="footer">
+        <span>Portfólio · juliana-romero-arquitetura.netlify.app</span>
+        <span>2 / 2</span>
+      </div>
+    </article>
+  </body>
+</html>
