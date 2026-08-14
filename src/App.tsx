@@ -64,7 +64,7 @@ const experiences = [
   ['2024—2025', 'CDHU', 'Arquiteta Pleno'],
   ['2020—2023', 'SEINFRA Aracati', 'Arquiteta Pleno'],
   ['2015—2018', 'Magis Incorporações', 'Arquiteta Pleno'],
-  ['2014—2015', 'JV Engenharia', 'Coordenadora de Projetos'],
+  ['2014—2015', 'JVS Engenharia', 'Coordenadora de Projetos'],
   ['2013—2014', 'JVS Engenharia', 'Arquiteta Pleno'],
   ['2011—2012', 'Escritório Cézar Fiuza', 'Arquiteta Projetista'],
 ]
