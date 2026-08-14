@@ -128,7 +128,9 @@
 .hero-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 48%, rgb(17 17 16 / .5));
+  background:
+    linear-gradient(to bottom, rgb(17 17 16 / .32), rgb(17 17 16 / 0) 24%),
+    linear-gradient(to bottom, rgb(17 17 16 / 0) 38%, rgb(17 17 16 / .34) 61%, rgb(17 17 16 / .76));
 }
 
 .hero-title {
@@ -137,7 +139,7 @@
   bottom: 42px;
   left: 40px;
   color: white;
-  mix-blend-mode: difference;
+  text-shadow: 0 1px 48px rgb(17 17 16 / .34);
 }
 
 .hero-title h1 {
@@ -179,7 +181,8 @@
   z-index: 2;
   top: 22px;
   right: 24px;
-  color: rgb(255 255 255 / .72);
+  color: rgb(255 255 255 / .82);
+  text-shadow: 0 0 14px rgb(17 17 16 / .55);
 }
 
 .hero-stats {

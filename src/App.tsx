@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import heroArchitecture from './assets/juliana-hero-architecture.webp'
+import heroIntensiveCare from './assets/juliana-hero-uti.webp'
 import healthArchitecture from './assets/juliana-project-health.webp'
 import housingArchitecture from './assets/juliana-project-housing.webp'
 import heritageArchitecture from './assets/juliana-project-heritage.webp'
@@ -70,7 +71,7 @@ const experiences = [
 ]
 
 const heroSlides = [
-  { src: heroArchitecture, alt: 'Edifício hospitalar contemporâneo em concreto' },
+  { src: heroIntensiveCare, alt: 'Unidade de terapia intensiva com leitos modulares e posto de enfermagem' },
   { src: healthArchitecture, alt: 'Interior hospitalar contemporâneo' },
   { src: heritageArchitecture, alt: 'Edifício industrial requalificado' },
 ]
