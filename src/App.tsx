@@ -25,7 +25,7 @@ const Icon = ({ name }: { name: IconName }) => {
 }
 
 const stats = [
-  { value: '19', label: 'anos de experiência', icon: 'clock' as const },
+  { value: '18', label: 'anos de experiência', icon: 'clock' as const },
   { value: '08', label: 'ferramentas principais', icon: 'layers' as const },
   { value: '01', label: 'menção honrosa', icon: 'award' as const },
 ]
@@ -61,13 +61,13 @@ const projects = [
 ]
 
 const experiences = [
-  ['2025—Atual', 'Autônoma', 'Arquiteta'],
+  ['2023—Atual', 'Autônoma', 'Arquiteta'],
   ['2024—2025', 'CDHU', 'Analista de Projetos'],
   ['2020—2023', 'SEINFRA', 'Analista de Projetos'],
   ['2015—2018', 'Magis Incorporações', 'Analista de Projetos'],
   ['2014—2015', 'JVS Engenharia', 'Coordenadora de Projetos'],
   ['2013—2014', 'JVS Engenharia', 'Analista de Projetos'],
-  ['2011—2012', 'Escritório César Fiúza', 'Arquiteta Projetista'],
+  ['2011—2012', 'Escritório Cézar Fiuza', 'Arquiteta Projetista'],
   ['2007—2011', 'CRD Engenharia', 'Arquiteta Orçamentista'],
 ]
 
@@ -302,8 +302,8 @@ function App() {
           </article>
           <article className="reveal">
             <span>Ferramentas</span>
-            <h3>Revit · AutoCAD · SketchUp</h3>
-            <p>Navisworks · V-Ray · MS Project</p>
+            <h3>Revit · AutoCAD · Navisworks</h3>
+            <p>SketchUp · MS Project · AutoDoc</p>
             <h3>Inglês avançado</h3>
             <p>Espanhol básico</p>
           </article>
@@ -313,7 +313,7 @@ function App() {
       <footer id="contato">
         <div className="footer-cta reveal">
           <h2>Vamos projetar algo<br />relevante juntos.</h2>
-          <a href="mailto:julianarquiteta@gmail.com">Iniciar uma conversa</a>
+          <a href="mailto:julianarquitetura@gmail.com">Iniciar uma conversa</a>
         </div>
         <div className="footer-divider" />
         <div className="footer-grid">
@@ -323,7 +323,7 @@ function App() {
           </div>
           <div>
             <span>Contato</span>
-            <a href="mailto:julianarquiteta@gmail.com">julianarquiteta@gmail.com</a>
+            <a href="mailto:julianarquitetura@gmail.com">julianarquitetura@gmail.com</a>
             <a href="tel:+5585999090952">+55 85 99909-0952</a>
           </div>
           <div>
