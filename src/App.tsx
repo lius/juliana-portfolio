@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import heroArchitecture from './assets/juliana-hero-architecture.webp'
 import heroIntensiveCare from './assets/juliana-hero-uti.webp'
 import healthArchitecture from './assets/juliana-project-health.webp'
 import housingArchitecture from './assets/juliana-project-housing.webp'
@@ -275,7 +274,7 @@ function App() {
       </section>
 
       <section className="image-strip" aria-label="Galeria conceitual">
-        {[healthArchitecture, heritageArchitecture, heroArchitecture, housingArchitecture].map((image, index) => (
+        {[healthArchitecture, heritageArchitecture, heroIntensiveCare, housingArchitecture].map((image, index) => (
           <img src={image} alt="" key={image} style={{ objectPosition: `${40 + index * 10}% center` }} />
         ))}
       </section>
