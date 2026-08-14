@@ -35,7 +35,7 @@ const projects = [
     number: '01',
     category: 'Arquitetura hospitalar',
     title: 'Infraestrutura de saúde',
-    description: 'Projetos para UTI adulto, Centro de Imagem e Centro Cirúrgico, da concepção ao executivo, conciliando disciplinas, exigências sanitárias e suporte técnico à obra.',
+    description: 'Projeto de UTI adulto e reformas do Centro Cirúrgico e do Centro de Imagem, do layout ao executivo, conciliando disciplinas, exigências sanitárias e suporte técnico à obra.',
     meta: 'SEINFRA · 2020—2023',
     image: healthArchitecture,
     alt: 'Imagem conceitual de corredor hospitalar contemporâneo',
@@ -51,7 +51,7 @@ const projects = [
   },
   {
     number: '03',
-    category: 'Patrimônio',
+    category: 'Retrofit',
     title: 'Fábrica São José',
     description: 'Proposta de requalificação da antiga fábrica para uso habitacional, reconhecida com menção honrosa no concurso nacional Opera Prima.',
     meta: 'Opera Prima · 2008',
@@ -165,10 +165,11 @@ function App() {
         <div>
           <span>Base em São Paulo</span><i>•</i>
           <span>Arquitetura hospitalar</span><i>•</i>
+          <span>Reformas e ampliações</span><i>•</i>
           <span>Compatibilização de projetos</span><i>•</i>
-          <span>Gestão técnica</span><i>•</i>
           <span>Base em São Paulo</span><i>•</i>
           <span>Arquitetura hospitalar</span><i>•</i>
+          <span>Reformas e ampliações</span><i>•</i>
           <span>Compatibilização de projetos</span><i>•</i>
         </div>
       </div>
@@ -190,7 +191,7 @@ function App() {
           <Icon name="scan" />
           <div>
             <h2>Competências principais</h2>
-            {['Arquitetura hospitalar', 'Compatibilização', 'Gestão de projetos'].map((skill) => (
+            {['Arquitetura hospitalar', 'Reformas e ampliações', 'Compatibilização', 'Gestão de projetos'].map((skill) => (
               <div className="skill-row" key={skill}>
                 <span>{skill}</span>
                 <Icon name="mark" />
@@ -202,8 +203,8 @@ function App() {
         <div className="bio reveal">
           <h2>
             Transformo complexidade técnica em projetos claros, coordenados e preparados
-            para sair do papel. <span>Minha atuação conecta cuidado, viabilidade e precisão
-            em todas as etapas do processo.</span>
+            para sair do papel. <span>Da unidade nova à reforma que não pode parar, minha
+            atuação conecta cuidado, viabilidade e precisão.</span>
           </h2>
           <div>
             <a className="primary-button" href="/Curriculo-Juliana-Romero.pdf" download>
@@ -302,7 +303,7 @@ function App() {
           </article>
           <article className="reveal">
             <span>Ferramentas</span>
-            <h3>Revit · AutoCAD · Navisworks</h3>
+            <h3>AutoCAD · Revit · Navisworks</h3>
             <p>SketchUp · MS Project · AutoDoc</p>
             <h3>Inglês avançado</h3>
             <p>Espanhol básico</p>
