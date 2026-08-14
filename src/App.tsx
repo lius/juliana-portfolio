@@ -302,7 +302,7 @@ function App() {
             <span>Ferramentas</span>
             <h3>Revit · AutoCAD · SketchUp</h3>
             <p>Navisworks · V-Ray · MS Project</p>
-            <h3>Inglês fluente</h3>
+            <h3>Inglês avançado</h3>
             <p>Espanhol básico</p>
           </article>
         </div>
