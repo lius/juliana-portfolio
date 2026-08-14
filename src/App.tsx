@@ -25,7 +25,7 @@ const Icon = ({ name }: { name: IconName }) => {
 }
 
 const stats = [
-  { value: '18+', label: 'anos de experiência', icon: 'clock' as const },
+  { value: '19', label: 'anos de experiência', icon: 'clock' as const },
   { value: '08', label: 'ferramentas principais', icon: 'layers' as const },
   { value: '01', label: 'menção honrosa', icon: 'award' as const },
 ]
@@ -36,7 +36,7 @@ const projects = [
     category: 'Arquitetura hospitalar',
     title: 'Infraestrutura de saúde',
     description: 'Projetos para UTI adulto, Centro de Imagem e Centro Cirúrgico, da concepção ao executivo, conciliando disciplinas, exigências sanitárias e suporte técnico à obra.',
-    meta: 'SEINFRA Aracati · 2020—2023',
+    meta: 'SEINFRA · 2020—2023',
     image: healthArchitecture,
     alt: 'Imagem conceitual de corredor hospitalar contemporâneo',
   },
@@ -61,12 +61,14 @@ const projects = [
 ]
 
 const experiences = [
-  ['2024—2025', 'CDHU', 'Arquiteta Pleno'],
-  ['2020—2023', 'SEINFRA Aracati', 'Arquiteta Pleno'],
-  ['2015—2018', 'Magis Incorporações', 'Arquiteta Pleno'],
+  ['2025—Atual', 'Autônoma', 'Arquiteta'],
+  ['2024—2025', 'CDHU', 'Analista de Projetos'],
+  ['2020—2023', 'SEINFRA', 'Analista de Projetos'],
+  ['2015—2018', 'Magis Incorporações', 'Analista de Projetos'],
   ['2014—2015', 'JVS Engenharia', 'Coordenadora de Projetos'],
-  ['2013—2014', 'JVS Engenharia', 'Arquiteta Pleno'],
-  ['2011—2012', 'Escritório Cézar Fiuza', 'Arquiteta Projetista'],
+  ['2013—2014', 'JVS Engenharia', 'Analista de Projetos'],
+  ['2011—2012', 'Escritório César Fiúza', 'Arquiteta Projetista'],
+  ['2007—2011', 'CRD Engenharia', 'Arquiteta Orçamentista'],
 ]
 
 const heroSlides = [
@@ -251,12 +253,12 @@ function App() {
           </div>
           <div>
             <Icon name="layers" />
-            <span>[2007—2025]</span>
+            <span>[2007—Atual]</span>
           </div>
         </aside>
 
         <div className="career-summary reveal">
-          <p>Uma carreira construída entre incorporadoras, construtoras e setor público, conectando concepção, documentação, orçamento e acompanhamento de obra.</p>
+          <p>Uma carreira construída entre incorporadoras, construtoras, setor público e projetos autônomos, conectando concepção, documentação, orçamento e acompanhamento de obra.</p>
         </div>
 
         <div className="experience-list reveal">
