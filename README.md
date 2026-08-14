@@ -1,7 +1,7 @@
 # Juliana Romero — Arquitetura
 
-Portfólio profissional de Juliana Romero, arquiteta especialista em arquitetura
-hospitalar, compatibilização e gestão de projetos.
+Portfólio profissional de Juliana Romero, arquiteta com experiência em
+arquitetura hospitalar, compatibilização e gestão de projetos.
 
 ## Desenvolvimento
 

@@ -292,7 +292,7 @@ function App() {
             <p>UNIFOR · 2001—2007</p>
           </article>
           <article className="reveal">
-            <span>Especialização</span>
+            <span>Formação complementar</span>
             <h3>Arquitetura para a Saúde</h3>
             <p>TAPS · 2022—2023</p>
             <h3>Iluminação e Design de Interiores</h3>
