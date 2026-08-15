@@ -1,17 +1,31 @@
 import { useEffect, useState } from 'react'
 import heroIntensiveCare from './assets/juliana-hero-uti.webp'
 import healthArchitecture from './assets/juliana-project-health.webp'
-import housingArchitecture from './assets/juliana-project-housing.webp'
 import heritageArchitecture from './assets/juliana-project-heritage.webp'
+import julianaPortrait from './assets/juliana-retrato.webp'
+import utiPlan from './assets/projeto-uti-planta.webp'
+import utiIsolation from './assets/projeto-uti-isolamento.webp'
+import imagingPlan from './assets/projeto-imagem-planta.webp'
+import residenceGJ from './assets/projeto-residencia-gj.webp'
+import livingMI from './assets/projeto-sala-mi.webp'
+import momaGourmet from './assets/projeto-moma-gourmet.webp'
+import momaSite from './assets/projeto-moma-obra.webp'
+import momaLounge from './assets/projeto-moma-estar.webp'
+import aquarelaAerial from './assets/projeto-aquarela-aerea.webp'
+import aquarelaMeeting from './assets/projeto-aquarela-reuniao.webp'
+import libraryProposal from './assets/projeto-biblioteca-proposta.webp'
+import libraryDemolition from './assets/projeto-biblioteca-demolir.webp'
+import libraryFacade from './assets/projeto-biblioteca-fachada.webp'
 import './App.css'
 
-type IconName = 'arrow' | 'award' | 'clock' | 'layers' | 'mark' | 'scan'
+type IconName = 'arrow' | 'award' | 'clock' | 'close' | 'layers' | 'mark' | 'scan'
 
 const Icon = ({ name }: { name: IconName }) => {
   const paths = {
     arrow: <path d="M5 12h14m-5-5 5 5-5 5" />,
     award: <><circle cx="12" cy="8" r="5" /><path d="m9 13-1 8 4-2 4 2-1-8" /></>,
     clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
+    close: <path d="M6 6l12 12M18 6 6 18" />,
     layers: <><path d="m12 3 9 5-9 5-9-5 9-5Z" /><path d="m3 12 9 5 9-5M3 16l9 5 9-5" /></>,
     mark: <><circle cx="12" cy="12" r="9" /><path d="M12 7v10M7 12h10" /></>,
     scan: <><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" /><circle cx="12" cy="12" r="3" /></>,
@@ -30,33 +44,173 @@ const stats = [
   { value: '01', label: 'menção honrosa', icon: 'award' as const },
 ]
 
-const projects = [
+type Projeto = {
+  number: string
+  category: string
+  title: string
+  description: string
+  meta: string
+  image: string
+  alt: string
+  imageNote: string
+  drawing?: boolean
+  facts: [string, string][]
+  narrative: string[]
+  gallery: { src: string, caption: string, drawing?: boolean }[]
+  credit: string
+}
+
+const projects: Projeto[] = [
   {
     number: '01',
-    category: 'Arquitetura hospitalar',
-    title: 'Infraestrutura de saúde',
-    description: 'Projeto de UTI adulto e reformas do Centro Cirúrgico e do Centro de Imagem, do layout ao executivo, conciliando disciplinas, exigências sanitárias e suporte técnico à obra.',
-    meta: 'SEINFRA · 2020—2023',
-    image: healthArchitecture,
-    alt: 'Imagem conceitual de corredor hospitalar contemporâneo',
+    category: 'Projetos para saúde',
+    title: 'Hospital Eduardo Dias',
+    description:
+      'UTI de 12 leitos implantada sobre a estrutura de uma obra inacabada e reforma do Centro de Imagem, com decisões apoiadas na RDC 50.',
+    meta: 'SEINFRA · Aracati — CE · 2020—2023',
+    image: utiPlan,
+    alt: 'Planta da unidade de terapia intensiva de doze leitos',
+    imageNote: 'Planta · projeto autoral',
+    drawing: true,
+    facts: [
+      ['12', 'leitos'],
+      ['02', 'isolamentos com antecâmara'],
+      ['RDC 50', 'norma aplicada'],
+    ],
+    narrative: [
+      'A UTI foi implantada sobre a laje, os pilares e o piso de uma obra inacabada, que abrigaria o estacionamento de ambulâncias do hospital. Manter esse ponto era imprescindível: ali a unidade fica ao lado do Centro de Imagem e do Centro Cirúrgico.',
+      'São doze leitos, dois deles em quartos de isolamento com antecâmara, cuba, equipamento de uso individual e banheiro privativo — um destinado a pacientes imunodeprimidos e outro a doenças respiratórias.',
+      'O piso existente era um radier, o que limitava as instalações. A solução foi manter sobre ele apenas os leitos coletivos e criar novos pisos para os banheiros, sem comprometer os fluxos que a unidade exige. Todo o projeto foi desenvolvido em AutoCAD, com estudo das normas, escuta dos funcionários do hospital e visitas a unidades de referência.',
+      'No mesmo hospital assinei a reforma do Centro de Imagem, meu primeiro trabalho em unidade hospitalar. Estudando a RDC 50, propus que a sala de comando existente atendesse também a sala de raio-x, o que a norma permitia — a decisão dispensou a compra de vidro plumbífero e reduziu o orçamento. Os acabamentos seguiram os requisitos de área crítica e semicrítica, com manta vinílica condutiva na tomografia e manta de alto tráfego na endoscopia.',
+    ],
+    gallery: [
+      { src: utiIsolation, caption: 'Detalhe dos dois quartos de isolamento com antecâmara', drawing: true },
+      { src: imagingPlan, caption: 'Centro de Imagem: planta da reforma', drawing: true },
+    ],
+    credit: 'Projeto de arquitetura de autoria própria, desenvolvido na Secretaria de Infraestrutura.',
   },
   {
     number: '02',
-    category: 'Habitação',
-    title: 'Interesse social',
-    description: 'Análise de viabilidade técnica e gerenciamento da documentação de empreendimentos habitacionais para contratação no estado de São Paulo.',
-    meta: 'CDHU · 2024—2025',
-    image: housingArchitecture,
-    alt: 'Imagem conceitual de conjunto habitacional contemporâneo',
+    category: 'Projeto em Revit',
+    title: 'Residência G & J',
+    description:
+      'Casa de 182,96 m² em condomínio fechado, primeiro projeto integralmente modelado em Revit, com quantitativos extraídos para orçamento.',
+    meta: 'Projeto autoral · 182,96 m²',
+    image: residenceGJ,
+    alt: 'Fachada da residência unifamiliar de dois pavimentos',
+    imageNote: 'Estudo gerado em RErender',
+    facts: [
+      ['182,96 m²', 'área construída'],
+      ['270,78 m²', 'lote'],
+      ['02', 'pavimentos'],
+    ],
+    narrative: [
+      'Residência para um casal com dois filhos, em lote de 270,78 m² de condomínio fechado, com 116,17 m² no térreo e 66,79 m² no pavimento superior. O pedido era um estilo com cara de casa, bem clean, sem excesso de acabamentos.',
+      'Foi meu primeiro projeto inteiro em Revit, e o ganho apareceu em duas frentes. A primeira foi tempo: com um desenho de planta eu obtenho cortes, fachadas e modelagem. A segunda foi precisão de custo, porque a extração de quantitativos deixou a conversa sobre gastos de obra muito mais objetiva com o cliente. Desde então o Revit passou a ser minha preferência.',
+    ],
+    gallery: [],
+    credit:
+      'Imagem de apresentação gerada no RErender, aplicativo de inteligência artificial, para comunicar o conceito ao cliente antes do detalhamento.',
   },
   {
     number: '03',
-    category: 'Retrofit',
-    title: 'Fábrica São José',
-    description: 'Proposta de requalificação da antiga fábrica para uso habitacional, reconhecida com menção honrosa no concurso nacional Opera Prima.',
-    meta: 'Opera Prima · 2008',
-    image: heritageArchitecture,
-    alt: 'Imagem conceitual de fábrica industrial requalificada',
+    category: 'Projeto de interiores',
+    title: 'Sala M & I',
+    description:
+      'Estudo de sala de estar a partir das preferências do cliente, com executivo em AutoCAD, modelagem em SketchUp e renderização em V-Ray.',
+    meta: 'Projeto autoral · Interiores',
+    image: livingMI,
+    alt: 'Sala de estar com marcenaria escura e lareira',
+    imageNote: 'Renderização em V-Ray',
+    facts: [
+      ['AutoCAD', 'projeto executivo'],
+      ['SketchUp', 'modelagem'],
+      ['V-Ray', 'renderização'],
+    ],
+    narrative: [
+      'Minhas propostas de interiores partem do cliente. Na primeira reunião depois do fechamento do contrato, faço um estudo por preferências, referências e necessidades pessoais.',
+      'Neste caso o pedido era um ambiente que transmitisse conforto, com cores básicas e móveis escuros. O projeto executivo saiu em AutoCAD, a modelagem em SketchUp e a renderização em V-Ray.',
+    ],
+    gallery: [],
+    credit: 'Estudo e renderização de autoria própria.',
+  },
+  {
+    number: '04',
+    category: 'Análise de produto',
+    title: 'Cond. Res. MOMA',
+    description:
+      'Empreendimento de alto padrão com três torres, em que respondi pela fase final: sinalização, ambientação das áreas comuns e compatibilização do paisagismo em obra.',
+    meta: 'Magis Incorporações · 2015—2018',
+    image: momaGourmet,
+    alt: 'Área gourmet das áreas comuns entregue',
+    imageNote: 'Foto da área comum entregue',
+    facts: [
+      ['03', 'torres'],
+      ['82 a 111 m²', 'apartamentos'],
+      ['04', 'empreendimentos simultâneos'],
+    ],
+    narrative: [
+      'Na análise de produto cada analista respondia por quatro empreendimentos ao mesmo tempo, acompanhando desde a concepção e a viabilidade técnica até o estudo preliminar e o projeto legal. Isso incluía contratar e gerenciar os escritórios terceirizados de arquitetura, interiores, paisagismo, sinalização e acessibilidade.',
+      'No MOMA, empreendimento de alto padrão da Magis com três torres e apartamentos de 82 a 111 m², respondi pela fase final: contrato e análise do projeto de sinalização, ambientação das áreas comuns internas e externas, compatibilização do projeto de paisagismo durante a obra e elaboração dos projetos de interiores das áreas comuns.',
+      'Também implantei o ponto de venda e o apartamento decorado, acompanhei a execução e respondi pelos contratos das imagens 3D e da maquete física até a entrega, garantindo aderência ao padrão desejado.',
+    ],
+    gallery: [
+      { src: momaSite, caption: 'A mesma área gourmet durante a execução' },
+      { src: momaLounge, caption: 'Estar das áreas comuns, ambientado' },
+    ],
+    credit:
+      'Empreendimento da Magis Incorporações. O projeto de paisagismo é de autoria do escritório Benedito Abbud, e a compatibilização em obra esteve sob minha responsabilidade.',
+  },
+  {
+    number: '05',
+    category: 'Análise de projeto',
+    title: 'Aquarela Clube',
+    description:
+      'Gerenciamento da compatibilização entre os escritórios de projeto, com apontamentos verificados em DWG e Navisworks e todas as incompatibilidades sanadas no executivo.',
+    meta: 'Magis Incorporações · 2015—2018',
+    image: aquarelaAerial,
+    alt: 'Vista aérea do condomínio residencial clube',
+    imageNote: 'Foto do empreendimento entregue',
+    facts: [
+      ['56 a 75 m²', 'apartamentos'],
+      ['04', 'empreendimentos simultâneos'],
+      ['100%', 'incompatibilidades sanadas'],
+    ],
+    narrative: [
+      'Na análise de projeto acompanhei empreendimentos da aprovação do projeto legal até a entrega da obra: projeto básico e executivo, compatibilização das multidisciplinas, administração do sistema de revisão de projetos e contratação dos escritórios de hidrossanitário, elétrico, combate a incêndio, SPDA e modelagem BIM, com visitas periódicas à obra.',
+      'No Aquarela, condomínio clube com apartamentos de 56,66 a 75,53 m², respondi pelo gerenciamento da compatibilização entre os escritórios envolvidos. Analisava as incompatibilidades em DWG e no Navisworks e preparava um documento com todos os apontamentos, apresentado em reunião com todos os envolvidos para alinhar decisões e ajustes.',
+      'Todas as incompatibilidades foram sanadas na entrega do projeto executivo, o que se refletiu direto no andamento da obra. A construtora BSPar depois incorporou o projeto aos seus empreendimentos.',
+    ],
+    gallery: [
+      { src: aquarelaMeeting, caption: 'Reunião de alinhamento com os escritórios de projeto' },
+    ],
+    credit: 'Empreendimento da Magis Incorporações.',
+  },
+  {
+    number: '06',
+    category: 'Espaços públicos',
+    title: 'Biblioteca Pública',
+    description:
+      'Retrofit de um prédio onde funcionava uma UPA, com demolições, adequação de níveis para acessibilidade e preservação das aberturas existentes.',
+    meta: 'SEINFRA · Aracati — CE · 2020—2023',
+    image: libraryProposal,
+    alt: 'Planta da proposta para a biblioteca pública municipal',
+    imageNote: 'Planta · projeto autoral',
+    drawing: true,
+    facts: [
+      ['UPA', 'uso anterior do prédio'],
+      ['Retrofit', 'natureza da intervenção'],
+      ['Acessível', 'níveis de piso adequados'],
+    ],
+    narrative: [
+      'A Biblioteca Pública Municipal é uma proposta de retrofit em um prédio antigo onde funcionava uma UPA.',
+      'Para que o edifício atendesse ao programa de necessidades de uma biblioteca, foi preciso demolir e construir paredes, movimentar terra e adequar os níveis de piso para acessibilidade. A proposta preservou as janelas, as portas e o buganvile existente.',
+    ],
+    gallery: [
+      { src: libraryDemolition, caption: 'Planta demolir-construir, que organiza a intervenção', drawing: true },
+      { src: libraryFacade, caption: 'Fachada principal proposta', drawing: true },
+    ],
+    credit: 'Projeto de arquitetura de autoria própria, desenvolvido na Secretaria de Infraestrutura.',
   },
 ]
 
@@ -77,8 +231,18 @@ const heroSlides = [
   { src: heritageArchitecture, alt: 'Edifício industrial requalificado' },
 ]
 
+const stripImages = [
+  { src: residenceGJ, alt: '' },
+  { src: momaGourmet, alt: '' },
+  { src: aquarelaAerial, alt: '' },
+  { src: momaLounge, alt: '' },
+]
+
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [openProject, setOpenProject] = useState<string | null>(null)
+
+  const active = projects.find((project) => project.number === openProject) ?? null
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -101,6 +265,30 @@ function App() {
       observer.disconnect()
     }
   }, [])
+
+  useEffect(() => {
+    if (!active) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpenProject(null)
+    }
+
+    const offset = window.scrollY
+    const scrollbar = window.innerWidth - document.documentElement.clientWidth
+
+    document.body.style.position = 'fixed'
+    document.body.style.inset = `-${offset}px 0 auto 0`
+    document.body.style.paddingRight = `${scrollbar}px`
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      document.body.style.position = ''
+      document.body.style.inset = ''
+      document.body.style.paddingRight = ''
+      window.scrollTo({ top: offset, behavior: 'instant' })
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [active])
 
   return (
     <main className="page-shell">
@@ -188,7 +376,10 @@ function App() {
 
       <section className="intro" id="sobre">
         <aside className="skills reveal">
-          <Icon name="scan" />
+          <figure className="portrait">
+            <img src={julianaPortrait} alt="Retrato de Juliana Romero" />
+            <figcaption>Juliana Romero · Arquiteta</figcaption>
+          </figure>
           <div>
             <h2>Competências principais</h2>
             {['Arquitetura hospitalar', 'Reformas e ampliações', 'Compatibilização', 'Gestão de projetos'].map((skill) => (
@@ -226,7 +417,13 @@ function App() {
 
         <div className="project-list">
           {projects.map((project) => (
-            <article className="project-row" key={project.number}>
+            <button
+              className="project-row"
+              key={project.number}
+              type="button"
+              onClick={() => setOpenProject(project.number)}
+              aria-label={`Abrir detalhes de ${project.title}`}
+            >
               <div className="project-copy reveal">
                 <div className="project-category">
                   <span>{project.number}</span>
@@ -236,12 +433,15 @@ function App() {
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <small>{project.meta}</small>
+                <span className="project-more">
+                  Ver projeto <Icon name="arrow" />
+                </span>
               </div>
-              <div className="project-image">
+              <div className={project.drawing ? 'project-image is-drawing' : 'project-image'}>
                 <img src={project.image} alt={project.alt} />
-                <span>Imagem conceitual</span>
+                <span>{project.imageNote}</span>
               </div>
-            </article>
+            </button>
           ))}
         </div>
       </section>
@@ -276,9 +476,9 @@ function App() {
         </div>
       </section>
 
-      <section className="image-strip" aria-label="Galeria conceitual">
-        {[healthArchitecture, heritageArchitecture, heroIntensiveCare, housingArchitecture].map((image, index) => (
-          <img src={image} alt="" key={image} style={{ objectPosition: `${40 + index * 10}% center` }} />
+      <section className="image-strip" aria-label="Galeria de projetos">
+        {stripImages.map((image, index) => (
+          <img src={image.src} alt={image.alt} key={image.src} style={{ objectPosition: `${40 + index * 10}% center` }} />
         ))}
       </section>
 
@@ -338,6 +538,61 @@ function App() {
         </div>
         <div className="footer-wordmark">JULIANA.ROMERO</div>
       </footer>
+
+      {active && (
+        <div className="project-panel" role="dialog" aria-modal="true" aria-label={active.title}>
+          <button
+            className="panel-backdrop"
+            type="button"
+            onClick={() => setOpenProject(null)}
+            aria-label="Fechar detalhes do projeto"
+          />
+          <article className="panel-body">
+            <header>
+              <div>
+                <span>{active.number} / {active.category}</span>
+                <h2>{active.title}</h2>
+                <small>{active.meta}</small>
+              </div>
+              <button type="button" onClick={() => setOpenProject(null)} aria-label="Fechar">
+                <Icon name="close" />
+              </button>
+            </header>
+
+            <dl className="panel-facts">
+              {active.facts.map(([value, label]) => (
+                <div key={label}>
+                  <dt>{value}</dt>
+                  <dd>{label}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="panel-text">
+              {active.narrative.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+              ))}
+            </div>
+
+            <figure className={active.drawing ? 'panel-figure is-drawing' : 'panel-figure'}>
+              <img src={active.image} alt={active.alt} />
+              <figcaption>{active.imageNote}</figcaption>
+            </figure>
+
+            {active.gallery.map((item) => (
+              <figure
+                className={item.drawing ? 'panel-figure is-drawing' : 'panel-figure'}
+                key={item.src}
+              >
+                <img src={item.src} alt={item.caption} />
+                <figcaption>{item.caption}</figcaption>
+              </figure>
+            ))}
+
+            <p className="panel-credit">{active.credit}</p>
+          </article>
+        </div>
+      )}
     </main>
   )
 }
