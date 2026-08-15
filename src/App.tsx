@@ -13,6 +13,8 @@ import momaSite from './assets/projeto-moma-obra.webp'
 import momaLounge from './assets/projeto-moma-estar.webp'
 import aquarelaAerial from './assets/projeto-aquarela-aerea.webp'
 import aquarelaMeeting from './assets/projeto-aquarela-reuniao.webp'
+import pracaPlan from './assets/projeto-praca-planta.webp'
+import pracaElevation from './assets/projeto-praca-elevacao.webp'
 import libraryProposal from './assets/projeto-biblioteca-proposta.webp'
 import libraryDemolition from './assets/projeto-biblioteca-demolir.webp'
 import libraryFacade from './assets/projeto-biblioteca-fachada.webp'
@@ -64,10 +66,10 @@ const projects: Projeto[] = [
   {
     number: '01',
     category: 'Projetos para saúde',
-    title: 'Hospital Eduardo Dias',
+    title: 'UTI 12 leitos',
     description:
-      'UTI de 12 leitos implantada sobre a estrutura de uma obra inacabada e reforma do Centro de Imagem, com decisões apoiadas na RDC 50.',
-    meta: 'SEINFRA · Aracati — CE · 2020—2023',
+      'Unidade de terapia intensiva implantada sobre a estrutura de uma obra inacabada, com dois isolamentos e fluxos definidos pela RDC 50.',
+    meta: 'Hospital Eduardo Dias · Aracati — CE · 2020—2023',
     image: utiPlan,
     alt: 'Planta da unidade de terapia intensiva de doze leitos',
     imageNote: 'Planta · projeto autoral',
@@ -78,19 +80,41 @@ const projects: Projeto[] = [
       ['RDC 50', 'norma aplicada'],
     ],
     narrative: [
-      'A UTI foi implantada sobre a laje, os pilares e o piso de uma obra inacabada, que abrigaria o estacionamento de ambulâncias do hospital. Manter esse ponto era imprescindível: ali a unidade fica ao lado do Centro de Imagem e do Centro Cirúrgico.',
+      'A UTI foi proposta para atender os pacientes do Hospital Municipal Eduardo Dias, em Aracati. O espaço escolhido para a implantação aproveitava a laje, os pilares e o piso de uma obra inacabada, que abrigaria o estacionamento de ambulâncias do hospital. Manter esse ponto era imprescindível: ali a unidade fica ao lado do Centro de Imagem e do Centro Cirúrgico.',
       'São doze leitos, dois deles em quartos de isolamento com antecâmara, cuba, equipamento de uso individual e banheiro privativo — um destinado a pacientes imunodeprimidos e outro a doenças respiratórias.',
       'O piso existente era um radier, o que limitava as instalações. A solução foi manter sobre ele apenas os leitos coletivos e criar novos pisos para os banheiros, sem comprometer os fluxos que a unidade exige. Todo o projeto foi desenvolvido em AutoCAD, com estudo das normas, escuta dos funcionários do hospital e visitas a unidades de referência.',
-      'No mesmo hospital assinei a reforma do Centro de Imagem, meu primeiro trabalho em unidade hospitalar. Estudando a RDC 50, propus que a sala de comando existente atendesse também a sala de raio-x, o que a norma permitia — a decisão dispensou a compra de vidro plumbífero e reduziu o orçamento. Os acabamentos seguiram os requisitos de área crítica e semicrítica, com manta vinílica condutiva na tomografia e manta de alto tráfego na endoscopia.',
     ],
     gallery: [
       { src: utiIsolation, caption: 'Detalhe dos dois quartos de isolamento com antecâmara', drawing: true },
-      { src: imagingPlan, caption: 'Centro de Imagem: planta da reforma', drawing: true },
     ],
     credit: 'Projeto de arquitetura de autoria própria, desenvolvido na Secretaria de Infraestrutura.',
   },
   {
     number: '02',
+    category: 'Projetos para saúde',
+    title: 'Centro de Imagem',
+    description:
+      'Reforma do Centro de Imagem em que a leitura da RDC 50 permitiu reaproveitar a sala de comando para o raio-x e reduzir o orçamento.',
+    meta: 'Hospital Eduardo Dias · Aracati — CE · 2020—2023',
+    image: imagingPlan,
+    alt: 'Planta da reforma do Centro de Imagem',
+    imageNote: 'Planta · projeto autoral',
+    drawing: true,
+    facts: [
+      ['Reforma', 'primeiro trabalho em hospital'],
+      ['RDC 50', 'norma aplicada'],
+      ['Economia', 'sem vidro plumbífero'],
+    ],
+    narrative: [
+      'O projeto de reforma do Centro de Imagem no Hospital Eduardo Dias, em Aracati, foi meu primeiro trabalho em unidade hospitalar. Embora já tivesse experiência em trabalhos para saúde, essa era a primeira vez em um hospital.',
+      'O primeiro passo foi estudar as normas, o que contribuiu bastante para o partido do projeto. O Centro de Imagem já tinha uma sala de comando, e a RDC 50 permitia que ela atendesse também a sala de raio-x. A proposta evitou a compra de vidro plumbífero e reduziu o orçamento.',
+      'Os acabamentos seguiram os requisitos de área crítica e semicrítica: manta vinílica com piso condutivo na sala de tomografia e manta vinílica de alto tráfego na sala de endoscopia.',
+    ],
+    gallery: [],
+    credit: 'Projeto de arquitetura de autoria própria, desenvolvido na Secretaria de Infraestrutura.',
+  },
+  {
+    number: '03',
     category: 'Projeto em Revit',
     title: 'Residência G & J',
     description:
@@ -113,7 +137,7 @@ const projects: Projeto[] = [
       'Imagem de apresentação gerada no RErender, aplicativo de inteligência artificial, para comunicar o conceito ao cliente antes do detalhamento.',
   },
   {
-    number: '03',
+    number: '04',
     category: 'Projeto de interiores',
     title: 'Sala M & I',
     description:
@@ -135,7 +159,7 @@ const projects: Projeto[] = [
     credit: 'Estudo e renderização de autoria própria.',
   },
   {
-    number: '04',
+    number: '05',
     category: 'Análise de produto',
     title: 'Cond. Res. MOMA',
     description:
@@ -162,7 +186,7 @@ const projects: Projeto[] = [
       'Empreendimento da Magis Incorporações. O projeto de paisagismo é de autoria do escritório Benedito Abbud, e a compatibilização em obra esteve sob minha responsabilidade.',
   },
   {
-    number: '05',
+    number: '06',
     category: 'Análise de projeto',
     title: 'Aquarela Clube',
     description:
@@ -187,7 +211,33 @@ const projects: Projeto[] = [
     credit: 'Empreendimento da Magis Incorporações.',
   },
   {
-    number: '06',
+    number: '07',
+    category: 'Espaços públicos',
+    title: 'Praça Pet e Família',
+    description:
+      'Replanejamento de uma área subutilizada em praça arborizada, com espaço pet, playground, pista de cooper e convivência noturna.',
+    meta: 'SEINFRA · Aracati — CE · 2020—2023',
+    image: pracaPlan,
+    alt: 'Planta paisagística da Praça Pet e Espaço Família',
+    imageNote: 'Planta · projeto autoral',
+    drawing: true,
+    facts: [
+      ['Pet', 'playground e cooper'],
+      ['AutoCAD', 'projeto executivo'],
+      ['Orçamento', 'restrito e local'],
+    ],
+    narrative: [
+      'A Praça Pet e o Espaço Família foram concebidos para uma área subutilizada, ocupada por um centro de artesanato com poucas lojas e uma área verde só com areia e poucas árvores. As raízes dessas árvores frequentemente invadiam a rede de esgoto dos banheiros existentes e causavam transtornos.',
+      'Foi construído um novo centro de artesanato em um local mais atrativo para as vendas turísticas, e o espaço foi replanejado para uma praça que atendesse melhor os anseios locais: um trecho bem arborizado com espaço para pet, playground, pista de cooper e área de convivência, em que os bares e lanchonetes próximos pudessem colocar mesas e cadeiras à noite.',
+      'O projeto foi todo desenvolvido em AutoCAD. O orçamento era bastante restrito, o que limitou as escolhas de piso de modo a atender a região, a manutenção e a verba destinada à demanda.',
+    ],
+    gallery: [
+      { src: pracaElevation, caption: 'Corte da praça, da pista de cooper à praça de alimentação', drawing: true },
+    ],
+    credit: 'Projeto de arquitetura de autoria própria, desenvolvido na Secretaria de Infraestrutura.',
+  },
+  {
+    number: '08',
     category: 'Espaços públicos',
     title: 'Biblioteca Pública',
     description:
@@ -234,7 +284,7 @@ const heroSlides = [
 const stripImages = [
   { src: residenceGJ, alt: '' },
   { src: momaGourmet, alt: '' },
-  { src: aquarelaAerial, alt: '' },
+  { src: pracaPlan, alt: '' },
   { src: momaLounge, alt: '' },
 ]
 
