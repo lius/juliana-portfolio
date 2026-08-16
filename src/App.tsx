@@ -145,7 +145,7 @@ const projects: Projeto[] = [
     meta: 'Projeto autoral · Interiores',
     image: livingMI,
     alt: 'Sala de estar com marcenaria escura e lareira',
-    imageNote: 'Renderização em V-Ray',
+    imageNote: 'Estudo de interiores',
     facts: [
       ['AutoCAD', 'projeto executivo'],
       ['SketchUp', 'modelagem'],
