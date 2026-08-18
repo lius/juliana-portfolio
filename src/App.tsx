@@ -3,9 +3,9 @@ import heroIntensiveCare from './assets/juliana-hero-uti.webp'
 import healthArchitecture from './assets/juliana-project-health.webp'
 import heritageArchitecture from './assets/juliana-project-heritage.webp'
 import julianaPortrait from './assets/juliana-retrato.webp'
-import utiPlan from './assets/projeto-uti-planta.webp'
-import utiIsolation from './assets/projeto-uti-isolamento.webp'
-import imagingPlan from './assets/projeto-imagem-planta.webp'
+import utiPlan from './assets/projeto-uti-planta-tratada-v2.webp'
+import utiIsolation from './assets/projeto-uti-isolamento-tratada-v2.webp'
+import imagingPlan from './assets/projeto-imagem-planta-aprovada.webp'
 import residenceGJ from './assets/projeto-residencia-gj.webp'
 import livingMI from './assets/projeto-sala-mi.webp'
 import momaGourmet from './assets/projeto-moma-gourmet.webp'
@@ -13,10 +13,10 @@ import momaSite from './assets/projeto-moma-obra.webp'
 import momaLounge from './assets/projeto-moma-estar.webp'
 import aquarelaAerial from './assets/projeto-aquarela-aerea.webp'
 import aquarelaMeeting from './assets/projeto-aquarela-reuniao.webp'
-import pracaPlan from './assets/projeto-praca-planta.webp'
+import pracaPlan from './assets/projeto-praca-planta-tratada-v2.webp'
 import pracaElevation from './assets/projeto-praca-elevacao.webp'
-import libraryProposal from './assets/projeto-biblioteca-proposta.webp'
-import libraryDemolition from './assets/projeto-biblioteca-demolir.webp'
+import libraryProposal from './assets/projeto-biblioteca-proposta-tratada-v2.webp'
+import libraryDemolition from './assets/projeto-biblioteca-demolir-tratada-v2.webp'
 import libraryFacade from './assets/projeto-biblioteca-fachada.webp'
 import './App.css'
 
@@ -443,9 +443,9 @@ function App() {
 
         <div className="bio reveal">
           <h2>
-            Transformo complexidade técnica em projetos claros, coordenados e preparados
-            para sair do papel. <span>Da unidade nova à reforma que não pode parar, minha
-            atuação conecta cuidado, viabilidade e precisão.</span>
+            Cada projeto parte do uso, do contexto e das possibilidades técnicas que orientam
+            sua execução. <span>Uma trajetória entre diferentes escalas, com experiência em
+            arquitetura para a saúde, coordenação, compatibilização e viabilidade.</span>
           </h2>
           <div>
             <a className="primary-button" href="/Curriculo-Juliana-Romero.pdf" download>
