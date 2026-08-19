@@ -462,7 +462,7 @@ function App() {
         <div className="section-title reveal">
           <div>
             <span>01 / Trabalhos selecionados</span>
-            <h2>Projetos em foco</h2>
+            <h2>Experiência construída na prática</h2>
           </div>
           <Icon name="arrow" />
         </div>
@@ -502,7 +502,7 @@ function App() {
         <aside className="career-title reveal">
           <div>
             <span>02 / Percurso</span>
-            <h2>Experiência construída na prática</h2>
+            <h2>Trajetória</h2>
           </div>
           <div>
             <Icon name="layers" />

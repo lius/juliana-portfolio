@@ -616,10 +616,9 @@
 
 .career-title h2 {
   margin: 12px 0 0;
-  font-size: clamp(32px, 3.2vw, 44px);
+  font-size: clamp(45px, 4.5vw, 64px);
   font-weight: 500;
-  letter-spacing: -.05em;
-  line-height: 1.02;
+  letter-spacing: -.06em;
 }
 
 .career-title > div:last-child {
