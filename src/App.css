@@ -298,13 +298,13 @@
 
 .type-banner h2 {
   margin: 0;
-  font-size: clamp(65px, 9vw, 135px);
+  font-size: clamp(54px, 7.4vw, 112px);
   font-weight: 600;
   letter-spacing: -.075em;
   line-height: .86;
 }
 
-.type-banner > h2 {
+.type-banner > h2:last-of-type {
   color: #a9a8a2;
 }
 
@@ -616,9 +616,10 @@
 
 .career-title h2 {
   margin: 12px 0 0;
-  font-size: clamp(45px, 4.5vw, 64px);
+  font-size: clamp(32px, 3.2vw, 44px);
   font-weight: 500;
-  letter-spacing: -.06em;
+  letter-spacing: -.05em;
+  line-height: 1.02;
 }
 
 .career-title > div:last-child {
@@ -977,7 +978,7 @@ footer {
   }
 
   .type-banner h2 {
-    font-size: clamp(43px, 14vw, 61px);
+    font-size: clamp(28px, 9.2vw, 44px);
   }
 
   .type-banner a {

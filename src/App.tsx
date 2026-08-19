@@ -418,9 +418,10 @@ function App() {
           <a href="#sobre" aria-label="Ir para apresentação">
             <Icon name="arrow" />
           </a>
-          <h2>de alta</h2>
+          <h2>pensada</h2>
         </div>
-        <h2>complexidade</h2>
+        <h2>para contextos</h2>
+        <h2>complexos</h2>
         <Icon name="mark" />
       </section>
 
@@ -443,9 +444,10 @@ function App() {
 
         <div className="bio reveal">
           <h2>
-            Cada projeto parte do uso, do contexto e das possibilidades técnicas que orientam
-            sua execução. <span>Uma trajetória entre diferentes escalas, com experiência em
-            arquitetura para a saúde, coordenação, compatibilização e viabilidade.</span>
+            Cada projeto começa pela compreensão de seu uso, contexto e possibilidades
+            técnicas. <span>Ao longo da trajetória, diferentes escalas e desafios contribuíram
+            para uma experiência que transita pela arquitetura para a saúde, coordenação,
+            compatibilização e viabilidade.</span>
           </h2>
           <div>
             <a className="primary-button" href="/Curriculo-Juliana-Romero.pdf" download>
@@ -460,7 +462,7 @@ function App() {
         <div className="section-title reveal">
           <div>
             <span>01 / Trabalhos selecionados</span>
-            <h2>Experiência em foco</h2>
+            <h2>Projetos em foco</h2>
           </div>
           <Icon name="arrow" />
         </div>
@@ -500,7 +502,7 @@ function App() {
         <aside className="career-title reveal">
           <div>
             <span>02 / Percurso</span>
-            <h2>Trajetória</h2>
+            <h2>Experiência construída na prática</h2>
           </div>
           <div>
             <Icon name="layers" />
@@ -509,7 +511,7 @@ function App() {
         </aside>
 
         <div className="career-summary reveal">
-          <p>Uma carreira construída entre incorporadoras, construtoras, setor público e projetos autônomos, conectando concepção, documentação, orçamento e acompanhamento de obra.</p>
+          <p>Uma trajetória em diferentes contextos — incorporadoras, construtoras, setor público e projetos autônomos — acompanhando o projeto da concepção ao orçamento e à obra.</p>
         </div>
 
         <div className="experience-list reveal">
@@ -563,8 +565,8 @@ function App() {
 
       <footer id="contato">
         <div className="footer-cta reveal">
-          <h2>Vamos projetar algo<br />relevante juntos.</h2>
-          <a href="mailto:julianarquitetura@gmail.com">Iniciar uma conversa</a>
+          <h2>Um projeto começa<br />com uma boa conversa.</h2>
+          <a href="mailto:julianarquitetura@gmail.com">Conversar sobre um projeto</a>
         </div>
         <div className="footer-divider" />
         <div className="footer-grid">
