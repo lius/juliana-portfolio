@@ -4,8 +4,10 @@ import healthArchitecture from './assets/juliana-project-health.webp'
 import heritageArchitecture from './assets/juliana-project-heritage.webp'
 import julianaPortrait from './assets/juliana-retrato.webp'
 import utiPlan from './assets/projeto-uti-planta-tratada-v2.webp'
+import utiPerspective from './assets/projeto-uti-perspectiva.webp'
 import utiIsolation from './assets/projeto-uti-isolamento-tratada-v2.webp'
 import imagingPlan from './assets/projeto-imagem-planta-aprovada.webp'
+import imagingPerspective from './assets/projeto-imagem-perspectiva.webp'
 import residenceGJ from './assets/projeto-residencia-gj.webp'
 import livingMI from './assets/projeto-sala-mi.webp'
 import momaGourmet from './assets/projeto-moma-gourmet.webp'
@@ -55,6 +57,9 @@ type Projeto = {
   image: string
   alt: string
   imageNote: string
+  cover?: string
+  coverAlt?: string
+  coverNote?: string
   drawing?: boolean
   facts: [string, string][]
   narrative: string[]
@@ -73,6 +78,9 @@ const projects: Projeto[] = [
     image: utiPlan,
     alt: 'Planta da unidade de terapia intensiva de doze leitos',
     imageNote: 'Planta · projeto autoral',
+    cover: utiPerspective,
+    coverAlt: 'Planta em perspectiva da unidade de terapia intensiva de doze leitos',
+    coverNote: 'Perspectiva · projeto autoral',
     drawing: true,
     facts: [
       ['12', 'leitos'],
@@ -99,6 +107,9 @@ const projects: Projeto[] = [
     image: imagingPlan,
     alt: 'Planta da reforma do Centro de Imagem',
     imageNote: 'Planta · projeto autoral',
+    cover: imagingPerspective,
+    coverAlt: 'Planta em perspectiva da reforma do Centro de Imagem',
+    coverNote: 'Perspectiva · projeto autoral',
     drawing: true,
     facts: [
       ['Reforma', 'primeiro trabalho em hospital'],
@@ -490,8 +501,8 @@ function App() {
                 </span>
               </div>
               <div className={project.drawing ? 'project-image is-drawing' : 'project-image'}>
-                <img src={project.image} alt={project.alt} />
-                <span>{project.imageNote}</span>
+                <img src={project.cover ?? project.image} alt={project.coverAlt ?? project.alt} />
+                <span>{project.coverNote ?? project.imageNote}</span>
               </div>
             </button>
           ))}
