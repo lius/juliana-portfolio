@@ -553,7 +553,7 @@ function App() {
           <article className="reveal">
             <span>Formação</span>
             <h3>Arquitetura Hospitalar</h3>
-            <p>Faculdade Israelita Albert Einstein · início em setembro de 2026</p>
+            <p>Faculdade Israelita Albert Einstein · 2026—2027</p>
             <h3>Mestre em Ciências da Cidade</h3>
             <p>UNIFOR · 2018—2019</p>
             <h3>Arquitetura e Urbanismo</h3>
