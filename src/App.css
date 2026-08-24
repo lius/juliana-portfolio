@@ -1134,14 +1134,13 @@ footer {
 }
 
 .project-image.is-drawing {
-  background: #fbfbf9;
+  background: var(--paper);
 }
 
 .project-image.is-drawing img {
   filter: none;
-  object-fit: contain;
+  object-fit: cover;
   opacity: 1;
-  padding: 16px;
 }
 
 .project-row:hover .project-image.is-drawing img {
@@ -1307,8 +1306,7 @@ footer {
 }
 
 .panel-figure.is-drawing img {
-  padding: 12px;
-  background: #fbfbf9;
+  background: var(--paper);
 }
 
 .panel-figure figcaption {

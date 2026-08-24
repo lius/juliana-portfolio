@@ -75,12 +75,12 @@ const projects: Projeto[] = [
     description:
       'Unidade de terapia intensiva implantada sobre a estrutura de uma obra inacabada, com dois isolamentos e fluxos definidos pela RDC 50.',
     meta: 'Hospital Eduardo Dias · Aracati — CE · 2020—2023',
-    image: utiPlan,
-    alt: 'Planta da unidade de terapia intensiva de doze leitos',
-    imageNote: 'Planta · projeto autoral',
-    cover: utiPerspective,
-    coverAlt: 'Planta em perspectiva da unidade de terapia intensiva de doze leitos',
-    coverNote: 'Perspectiva · projeto autoral',
+    image: utiPerspective,
+    alt: 'Planta em perspectiva da unidade de terapia intensiva de doze leitos',
+    imageNote: 'Perspectiva · projeto autoral',
+    cover: utiPlan,
+    coverAlt: 'Planta da unidade de terapia intensiva de doze leitos',
+    coverNote: 'Planta · projeto autoral',
     drawing: true,
     facts: [
       ['12', 'leitos'],
@@ -104,12 +104,12 @@ const projects: Projeto[] = [
     description:
       'Reforma do Centro de Imagem em que a leitura da RDC 50 permitiu reaproveitar a sala de comando para o raio-x e reduzir o orçamento.',
     meta: 'Hospital Eduardo Dias · Aracati — CE · 2020—2023',
-    image: imagingPlan,
-    alt: 'Planta da reforma do Centro de Imagem',
-    imageNote: 'Planta · projeto autoral',
-    cover: imagingPerspective,
-    coverAlt: 'Planta em perspectiva da reforma do Centro de Imagem',
-    coverNote: 'Perspectiva · projeto autoral',
+    image: imagingPerspective,
+    alt: 'Planta em perspectiva da reforma do Centro de Imagem',
+    imageNote: 'Perspectiva · projeto autoral',
+    cover: imagingPlan,
+    coverAlt: 'Planta da reforma do Centro de Imagem',
+    coverNote: 'Planta · projeto autoral',
     drawing: true,
     facts: [
       ['Reforma', 'primeiro trabalho em hospital'],
@@ -129,7 +129,7 @@ const projects: Projeto[] = [
     category: 'Projeto em Revit',
     title: 'Residência G & J',
     description:
-      'Casa de 182,96 m² em condomínio fechado, primeiro projeto integralmente modelado em Revit, com quantitativos extraídos para orçamento.',
+      'Casa de 182,96 m² em condomínio fechado, integralmente modelada em Revit, com quantitativos extraídos para orçamento.',
     meta: 'Projeto autoral · 182,96 m²',
     image: residenceGJ,
     alt: 'Fachada da residência unifamiliar de dois pavimentos',
@@ -473,7 +473,7 @@ function App() {
         <div className="section-title reveal">
           <div>
             <span>01 / Trabalhos selecionados</span>
-            <h2>Experiência construída na prática</h2>
+            <h2>Projetos e atuação</h2>
           </div>
           <Icon name="arrow" />
         </div>
