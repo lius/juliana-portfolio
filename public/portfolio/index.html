@@ -1,0 +1,1490 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Portfólio · Juliana Romero</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @page {
+        size: 1024pt 576pt;
+        margin: 0;
+      }
+
+      :root {
+        --paper: #eaeae5;
+        --ink: #1c1c1c;
+        --line: #c9c8c1;
+        --muted: #77766f;
+        --soft: #3a3936;
+        --sans: 'Inter', sans-serif;
+        --mono: 'DM Mono', monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        position: relative;
+        width: 1024pt;
+        height: 576pt;
+        overflow: hidden;
+        background: var(--paper);
+        break-after: page;
+      }
+
+      .page:last-child {
+        break-after: auto;
+      }
+
+      .pad {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        padding: 40pt 46pt;
+      }
+
+      /* --- Tipografia de apoio --- */
+      .eyebrow {
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 6.6pt;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .sheet-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 11pt;
+        gap: 24pt;
+      }
+
+      .sheet-head h2 {
+        margin: 5pt 0 0;
+        font-size: 29pt;
+        font-weight: 500;
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+
+      p {
+        margin: 0 0 9pt;
+        color: var(--soft);
+        font-size: 9.3pt;
+        font-weight: 300;
+        line-height: 1.68;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      .lead {
+        color: var(--ink);
+        font-size: 12.4pt;
+        font-weight: 400;
+        letter-spacing: -0.015em;
+        line-height: 1.5;
+      }
+
+      /* --- Ficha técnica --- */
+      .facts {
+        display: grid;
+        margin: 0;
+        border-top: 1px solid var(--line);
+        padding-top: 12pt;
+        gap: 8pt 20pt;
+      }
+
+      .facts.cols-2 { grid-template-columns: repeat(2, 1fr); }
+      .facts.cols-3 { grid-template-columns: repeat(3, 1fr); }
+      .facts.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+      .fact dt {
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 6.2pt;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .fact dd {
+        margin: 4pt 0 0;
+        font-size: 10.6pt;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        line-height: 1.28;
+      }
+
+      /* --- Imagens --- */
+      .drawing {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .photo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Regra editorial: registro de obra em preto e branco, entrega em cor. */
+      .photo.doc {
+        filter: grayscale(1) contrast(1.06);
+      }
+
+      .caption {
+        display: block;
+        margin-top: 8pt;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 6.2pt;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      /* --- Abertura de bloco com imagem --- */
+      .opener {
+        padding: 0;
+      }
+
+      .opener > img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        filter: grayscale(1) contrast(1.06);
+        object-fit: cover;
+      }
+
+      .opener .shade {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(to bottom, rgb(16 16 15 / 0.42), rgb(16 16 15 / 0) 26%),
+          linear-gradient(to bottom, rgb(16 16 15 / 0) 26%, rgb(16 16 15 / 0.52) 56%, rgb(16 16 15 / 0.9));
+      }
+
+      .opener .block {
+        position: absolute;
+        right: 46pt;
+        bottom: 42pt;
+        left: 46pt;
+        color: #fff;
+      }
+
+      .opener .block h1 {
+        max-width: 620pt;
+        margin: 12pt 0 0;
+        font-size: 52pt;
+        font-weight: 500;
+        letter-spacing: -0.055em;
+        line-height: 0.94;
+      }
+
+      .opener .block .sub {
+        max-width: 470pt;
+        margin: 16pt 0 0;
+        color: rgb(255 255 255 / 0.78);
+        font-size: 10.4pt;
+        font-weight: 300;
+        line-height: 1.6;
+      }
+
+      .opener .mark {
+        position: absolute;
+        top: 34pt;
+        right: 46pt;
+        color: rgb(255 255 255 / 0.78);
+      }
+
+      .opener .num {
+        color: rgb(255 255 255 / 0.7);
+        font-family: var(--mono);
+        font-size: 6.8pt;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      /* A imagem é clara: sem sombra, a linha fina em branco desaparece. */
+      .opener .mark,
+      .opener .num {
+        text-shadow: 0 0 12pt rgb(16 16 15 / 0.85);
+      }
+
+      /* --- Abertura de bloco sobre papel, com faixa de desenho --- */
+      .opener-band .pad {
+        justify-content: space-between;
+        padding-bottom: 0;
+      }
+
+      .opener-band h1 {
+        max-width: 700pt;
+        margin: 16pt 0 0;
+        font-size: 50pt;
+        font-weight: 500;
+        letter-spacing: -0.055em;
+        line-height: 0.96;
+      }
+
+      .opener-band .sub {
+        max-width: 470pt;
+        margin-top: 18pt;
+      }
+
+      /* O corte tem proporção 6,25:1; nesta altura ele entra inteiro na largura
+         da página, sem corte lateral. */
+      .band {
+        height: 164pt;
+        margin: 0 -46pt;
+      }
+
+      .in-block {
+        display: grid;
+        border-top: 1px solid var(--line);
+        padding-top: 16pt;
+        gap: 40pt;
+        grid-template-columns: repeat(2, minmax(0, 300pt));
+      }
+
+      .in-block strong {
+        display: block;
+        font-size: 15pt;
+        font-weight: 500;
+        letter-spacing: -0.03em;
+      }
+
+      .in-block p {
+        margin-top: 7pt;
+      }
+
+      /* --- Prancha de planta em página cheia --- */
+      .plate {
+        flex: 1;
+        min-height: 0;
+        margin-top: 16pt;
+      }
+
+      /* A planta é o conteúdo da página: aperta as margens para ela crescer. */
+      .plate-page .pad {
+        padding: 30pt 40pt 22pt;
+      }
+
+      .plate-page .sheet-head {
+        padding-bottom: 9pt;
+      }
+
+      .plate-page .plate {
+        margin-top: 12pt;
+      }
+
+      .plate-page .foot {
+        margin-top: 10pt;
+        padding-top: 8pt;
+      }
+
+      /* --- Página de dados: texto + desenho --- */
+      .split {
+        display: grid;
+        flex: 1;
+        min-height: 0;
+        margin-top: 18pt;
+        gap: 30pt;
+      }
+
+      .split.text-left { grid-template-columns: 1fr 1.05fr; }
+      .split.text-right { grid-template-columns: 1.05fr 1fr; }
+      .split.text-narrow { grid-template-columns: 0.62fr 1fr; }
+
+      .col {
+        display: flex;
+        min-height: 0;
+        min-width: 0;
+        flex-direction: column;
+      }
+
+      .col.figure {
+        justify-content: flex-start;
+      }
+
+      .figure-body {
+        flex: 1;
+        min-height: 0;
+      }
+
+      .prose {
+        flex: 1;
+        min-height: 0;
+      }
+
+      .quote {
+        max-width: 430pt;
+        margin: 0;
+        font-size: 21pt;
+        font-weight: 400;
+        letter-spacing: -0.035em;
+        line-height: 1.24;
+      }
+
+      .quote span {
+        color: #9a9993;
+      }
+
+      .foot {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        border-top: 1px solid var(--line);
+        margin-top: 14pt;
+        padding-top: 9pt;
+      }
+
+      .foot .caption {
+        margin-top: 0;
+      }
+
+      .foot .credit {
+        max-width: 640pt;
+        color: var(--muted);
+        font-size: 7.6pt;
+        font-weight: 300;
+        font-style: italic;
+      }
+
+      /* --- Capa --- */
+      .cover .pad {
+        flex-direction: row;
+        padding: 0;
+      }
+
+      .cover .title-side {
+        display: flex;
+        width: 40%;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 44pt 40pt 40pt 46pt;
+      }
+
+      .cover h1 {
+        margin: 0;
+        font-size: 62pt;
+        font-weight: 500;
+        letter-spacing: -0.06em;
+        line-height: 0.9;
+      }
+
+      .cover .role {
+        margin-top: 22pt;
+        font-size: 12.6pt;
+        font-weight: 300;
+        letter-spacing: -0.015em;
+        line-height: 1.5;
+      }
+
+      .cover .rule {
+        width: 64pt;
+        height: 1px;
+        margin: 26pt 0;
+        background: var(--ink);
+      }
+
+      .cover .image-side {
+        width: 60%;
+        border-left: 1px solid var(--line);
+      }
+
+      /* --- Sobre --- */
+      .about-grid {
+        display: grid;
+        flex: 1;
+        min-height: 0;
+        margin-top: 20pt;
+        gap: 38pt;
+        grid-template-columns: 0.58fr 1fr;
+      }
+
+      .stats {
+        display: grid;
+        border-top: 1px solid var(--line);
+        margin-top: 20pt;
+        padding-top: 14pt;
+        gap: 20pt;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .stats strong {
+        display: block;
+        font-size: 30pt;
+        font-weight: 400;
+        letter-spacing: -0.05em;
+        line-height: 1;
+      }
+
+      .stats span {
+        display: block;
+        margin-top: 6pt;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 6.4pt;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      /* --- Sumário --- */
+      .toc {
+        flex: 1;
+        min-height: 0;
+        margin-top: 8pt;
+      }
+
+      .toc-row {
+        display: grid;
+        align-items: baseline;
+        border-bottom: 1px solid var(--line);
+        padding: 26pt 0;
+        gap: 26pt;
+        grid-template-columns: 40pt 1fr 1.15fr 44pt;
+      }
+
+      .toc-row:first-child {
+        border-top: 1px solid var(--line);
+      }
+
+      .toc-row h3 {
+        margin: 0;
+        font-size: 19pt;
+        font-weight: 500;
+        letter-spacing: -0.035em;
+        line-height: 1.1;
+      }
+
+      .toc-row .items {
+        color: var(--soft);
+        font-size: 9.3pt;
+        font-weight: 300;
+        line-height: 1.6;
+      }
+
+      .toc-row .pg {
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 8pt;
+        text-align: right;
+      }
+
+      /* --- Mosaico de fotos --- */
+      .mosaic {
+        display: grid;
+        height: 100%;
+        gap: 12pt;
+        grid-template-rows: 1.32fr 1fr;
+      }
+
+      .mosaic-pair {
+        display: grid;
+        min-height: 0;
+        gap: 12pt;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .frame {
+        display: flex;
+        min-height: 0;
+        flex-direction: column;
+      }
+
+      .frame .box {
+        flex: 1;
+        min-height: 0;
+      }
+
+      /* --- Dois desenhos lado a lado --- */
+      .duo {
+        display: grid;
+        height: 100%;
+        gap: 22pt;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      /* --- Página de dois projetos --- */
+      .pair {
+        display: grid;
+        flex: 1;
+        min-height: 0;
+        margin-top: 18pt;
+        gap: 34pt;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pair .shot {
+        height: 218pt;
+      }
+
+      .pair h3 {
+        margin: 16pt 0 0;
+        font-size: 18pt;
+        font-weight: 500;
+        letter-spacing: -0.035em;
+        line-height: 1.1;
+      }
+
+      .pair .meta {
+        margin-top: 5pt;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 6.4pt;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .pair p {
+        margin-top: 11pt;
+      }
+
+      .pair .facts {
+        margin-top: auto;
+      }
+
+      /* --- Fechamento --- */
+      .closing-grid {
+        display: grid;
+        margin-top: 22pt;
+        gap: 30pt;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .closing-grid h4 {
+        margin: 0 0 12pt;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 6.4pt;
+        font-weight: 500;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .entry {
+        border-top: 1px solid var(--line);
+        padding: 10pt 0;
+      }
+
+      .entry strong {
+        display: block;
+        font-size: 11.4pt;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+      }
+
+      .entry span {
+        display: block;
+        margin-top: 3pt;
+        color: var(--muted);
+        font-size: 8.4pt;
+        font-weight: 300;
+      }
+
+      .track {
+        border-top: 1px solid var(--line);
+        margin-top: 26pt;
+        padding-top: 14pt;
+      }
+
+      .track-grid {
+        display: grid;
+        margin-top: 12pt;
+        gap: 10pt 30pt;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .track-grid div {
+        display: flex;
+        align-items: baseline;
+        gap: 10pt;
+      }
+
+      .track-grid dt {
+        min-width: 62pt;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 6.6pt;
+        letter-spacing: 0.08em;
+      }
+
+      .track-grid dd {
+        margin: 0;
+        font-size: 9.2pt;
+        font-weight: 300;
+        line-height: 1.35;
+      }
+
+      .track-grid dd b {
+        font-weight: 500;
+      }
+
+      .contact {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        border-top: 1px solid var(--line);
+        margin-top: auto;
+        padding-top: 22pt;
+        gap: 40pt;
+      }
+
+      .contact .say {
+        max-width: 400pt;
+        font-size: 23pt;
+        font-weight: 400;
+        letter-spacing: -0.04em;
+        line-height: 1.18;
+      }
+
+      .contact .lines {
+        text-align: right;
+      }
+
+      .contact .lines b {
+        display: block;
+        margin-bottom: 5pt;
+        font-size: 11.6pt;
+        font-weight: 400;
+        letter-spacing: -0.015em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 01 · Capa -->
+    <section class="page cover">
+      <div class="pad">
+        <div class="title-side">
+          <span class="eyebrow">Portfólio · Trabalhos selecionados · 2026</span>
+          <div>
+            <h1>Juliana<br />Romero</h1>
+            <div class="rule"></div>
+            <p class="role">
+              Arquiteta e Urbanista<br />
+              Arquitetura para a saúde, coordenação e<br />
+              compatibilização de projetos
+            </p>
+          </div>
+          <span class="eyebrow">Fortaleza — CE · 18 anos de profissão</span>
+        </div>
+        <div class="image-side">
+          <img
+            class="photo"
+            style="object-position: 32% center"
+            src="img/projeto-uti-planta-tratada-v2.webp"
+            alt="Detalhe da planta da unidade de terapia intensiva"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · Posicionamento -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">Sobre</span>
+            <h2>Juliana Romero</h2>
+          </div>
+          <span class="eyebrow">Arquiteta e Urbanista · UNIFOR</span>
+        </div>
+
+        <div class="about-grid">
+          <div class="col figure">
+            <div class="figure-body">
+              <img class="photo" src="img/juliana-retrato.webp" alt="Retrato de Juliana Romero" />
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="prose">
+              <p class="lead">
+                Cada projeto começa pela compreensão de seu uso, contexto e possibilidades
+                técnicas.
+              </p>
+              <p>
+                Ao longo da trajetória, diferentes escalas e desafios contribuíram para uma
+                experiência que transita pela arquitetura para a saúde, coordenação,
+                compatibilização e viabilidade.
+              </p>
+              <p>
+                São dezoito anos entre construtora, incorporadora, órgão público e projeto
+                autoral — de arquiteta orçamentista a coordenadora de projetos, passando pela
+                análise de produto e de projetos em empreendimentos de médio e alto padrão e pelo
+                projeto de unidades hospitalares aprovadas junto à Vigilância Sanitária.
+              </p>
+              <p>
+                O trabalho em saúde exige um tipo específico de escuta: entender a rotina de quem
+                opera a unidade, estudar a norma antes de desenhar e checar cada decisão contra o
+                que a Vigilância Sanitária vai cobrar na aprovação. Foi assim na UTI e no Centro
+                de Imagem do Hospital Eduardo Dias.
+              </p>
+              <p>
+                Desde setembro de 2026 cursa a pós-graduação em Arquitetura Hospitalar na
+                Faculdade Israelita Albert Einstein.
+              </p>
+            </div>
+
+            <div class="stats">
+              <div><strong>18</strong><span>anos de experiência</span></div>
+              <div><strong>08</strong><span>ferramentas principais</span></div>
+              <div><strong>01</strong><span>menção honrosa</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span class="credit">Fortaleza — CE · disponível para projetos e posições em arquitetura para a saúde.</span>
+          <span class="caption">02</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · Sumário -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">Índice</span>
+            <h2>Sumário</h2>
+          </div>
+          <span class="eyebrow">Quatro blocos · nove projetos</span>
+        </div>
+
+        <div class="toc">
+          <div class="toc-row">
+            <span class="eyebrow">01</span>
+            <h3>Arquitetura para a saúde</h3>
+            <span class="items">UTI 12 leitos · Centro de Imagem</span>
+            <span class="pg">04</span>
+          </div>
+          <div class="toc-row">
+            <span class="eyebrow">02</span>
+            <h3>Coordenação e compatibilização</h3>
+            <span class="items">Aquarela Clube · Cond. Res. MOMA</span>
+            <span class="pg">09</span>
+          </div>
+          <div class="toc-row">
+            <span class="eyebrow">03</span>
+            <h3>Espaço público e retrofit</h3>
+            <span class="items">Praça Pet e Família · Biblioteca Pública</span>
+            <span class="pg">12</span>
+          </div>
+          <div class="toc-row">
+            <span class="eyebrow">04</span>
+            <h3>Residencial e interiores</h3>
+            <span class="items">Residência G &amp; J · Sala M &amp; I</span>
+            <span class="pg">15</span>
+          </div>
+          <div class="toc-row">
+            <span class="eyebrow">05</span>
+            <h3>Formação e contato</h3>
+            <span class="items">Formação, ferramentas e idiomas</span>
+            <span class="pg">16</span>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span class="credit">Todos os projetos identificados com autoria, cliente e papel exercido.</span>
+          <span class="caption">03</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · Abertura: saúde -->
+    <section class="page opener">
+      <img src="img/juliana-hero-uti.webp" alt="Ambiente de terapia intensiva" />
+      <div class="shade"></div>
+      <span class="mark eyebrow">Imagem conceitual</span>
+      <div class="block">
+        <span class="num">01 — Arquitetura para a saúde</span>
+        <h1>Projetos que precisam funcionar antes de agradar</h1>
+        <p class="sub">
+          Unidades assistenciais e de diagnóstico por imagem, do levantamento de necessidades ao
+          projeto executivo, com aprovação junto à Vigilância Sanitária pela RDC 50 da Anvisa.
+        </p>
+      </div>
+    </section>
+
+    <!-- 05 · UTI, prancha da planta -->
+    <section class="page plate-page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">01 · Projetos para saúde</span>
+            <h2>UTI 12 leitos</h2>
+          </div>
+          <span class="eyebrow">Hospital Municipal Eduardo Dias · Aracati — CE · 2020—2023</span>
+        </div>
+        <div class="plate">
+          <img
+            class="drawing"
+            src="img/projeto-uti-planta-tratada-v2.webp"
+            alt="Planta da unidade de terapia intensiva de doze leitos"
+          />
+        </div>
+        <div class="foot">
+          <span class="caption">Planta geral · projeto de autoria própria · AutoCAD</span>
+          <span class="caption">05</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · UTI, texto e isolamento -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">01 · UTI 12 leitos</span>
+            <h2>Uma UTI sobre uma obra inacabada</h2>
+          </div>
+          <span class="eyebrow">Autoria do projeto de arquitetura</span>
+        </div>
+
+        <div class="split text-left">
+          <div class="col">
+            <div class="prose">
+              <p>
+                O espaço escolhido para a implantação aproveitava a laje, os pilares e o piso de
+                uma obra inacabada, que abrigaria o estacionamento de ambulâncias. Manter esse
+                ponto era imprescindível: ali a unidade fica ao lado do Centro de Imagem e do
+                Centro Cirúrgico.
+              </p>
+              <p>
+                São doze leitos, dois deles em quartos de isolamento com antecâmara, cuba,
+                equipamento de uso individual e banheiro privativo — um destinado a pacientes
+                imunodeprimidos e outro a doenças respiratórias.
+              </p>
+              <p>
+                O piso existente era um radier, o que limitava as instalações. A solução foi
+                manter sobre ele apenas os leitos coletivos e criar novos pisos para os banheiros,
+                sem comprometer os fluxos que a unidade exige.
+              </p>
+              <p>
+                O desenvolvimento incluiu estudo das normas, escuta dos funcionários do hospital e
+                visitas a unidades de referência.
+              </p>
+            </div>
+            <dl class="facts cols-3">
+              <div class="fact"><dt>Leitos</dt><dd>12</dd></div>
+              <div class="fact"><dt>Isolamentos</dt><dd>02 com antecâmara</dd></div>
+              <div class="fact"><dt>Norma</dt><dd>RDC 50 · Anvisa</dd></div>
+            </dl>
+          </div>
+
+          <div class="col figure">
+            <div class="figure-body">
+              <img
+                class="drawing"
+                src="img/projeto-uti-isolamento-tratada-v4.webp"
+                alt="Detalhe dos dois quartos de isolamento com antecâmara"
+              />
+            </div>
+            <span class="caption">Detalhe dos dois quartos de isolamento com antecâmara</span>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span class="credit">
+            Projeto de arquitetura de autoria própria, desenvolvido na Secretaria de Infraestrutura.
+          </span>
+          <span class="caption">06</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · Centro de Imagem, planta e texto -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">02 · Projetos para saúde</span>
+            <h2>Centro de Imagem</h2>
+          </div>
+          <span class="eyebrow">Hospital Municipal Eduardo Dias · Aracati — CE · 2020—2023</span>
+        </div>
+
+        <div class="split text-right">
+          <div class="col figure">
+            <div class="figure-body">
+              <img
+                class="drawing"
+                src="img/projeto-imagem-planta-aprovada.webp"
+                alt="Planta da reforma do Centro de Imagem"
+              />
+            </div>
+            <span class="caption">Planta da reforma · projeto de autoria própria</span>
+          </div>
+
+          <div class="col">
+            <div class="prose">
+              <p class="lead">
+                Reforma de uma unidade de diagnóstico por imagem em operação, e o primeiro
+                trabalho dela dentro de um hospital.
+              </p>
+              <p>
+                Embora já tivesse experiência em trabalhos para a saúde, essa era a primeira vez
+                em um hospital. O primeiro passo foi estudar as normas, o que contribuiu bastante
+                para o partido do projeto.
+              </p>
+              <p>
+                A unidade reúne tomografia, endoscopia, raio-x e ultrassonografia, com sala de
+                comando, recepção, rouparia e apoio, e a setorização precisou separar as áreas
+                críticas das de circulação de pacientes e acompanhantes.
+              </p>
+              <p>
+                Os acabamentos seguiram os requisitos de área crítica e semicrítica: manta
+                vinílica com piso condutivo na sala de tomografia e manta vinílica de alto
+                tráfego na sala de endoscopia.
+              </p>
+            </div>
+            <dl class="facts cols-4">
+              <div class="fact"><dt>Escopo</dt><dd>Reforma em operação</dd></div>
+              <div class="fact"><dt>Salas</dt><dd>Tomografia, endoscopia, raio-x e ultrassom</dd></div>
+              <div class="fact"><dt>Norma</dt><dd>RDC 50 · Anvisa</dd></div>
+              <div class="fact"><dt>Papel</dt><dd>Autoria do projeto</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span class="credit">
+            Projeto de arquitetura de autoria própria, desenvolvido na Secretaria de Infraestrutura.
+          </span>
+          <span class="caption">07</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 · Centro de Imagem, a decisão de projeto -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">02 · Centro de Imagem</span>
+            <h2>A leitura da norma que reduziu o orçamento</h2>
+          </div>
+          <span class="eyebrow">Decisão de projeto</span>
+        </div>
+
+        <div class="split text-left">
+          <div class="col">
+            <blockquote class="quote">
+              O Centro de Imagem já tinha uma sala de comando, e a RDC 50 permitia que ela
+              atendesse também a sala de raio-x. <span>A proposta evitou a compra de vidro
+              plumbífero e reduziu o orçamento da obra.</span>
+            </blockquote>
+            <dl class="facts cols-3" style="margin-top: auto">
+              <div class="fact"><dt>Ganho</dt><dd>Sala de comando compartilhada</dd></div>
+              <div class="fact"><dt>Evitado</dt><dd>Vidro plumbífero</dd></div>
+              <div class="fact"><dt>Base</dt><dd>RDC 50 · Anvisa</dd></div>
+            </dl>
+          </div>
+
+          <div class="col figure">
+            <div class="figure-body">
+              <img
+                class="drawing"
+                src="img/projeto-imagem-perspectiva.webp"
+                alt="Planta em perspectiva da reforma do Centro de Imagem"
+              />
+            </div>
+            <span class="caption">Perspectiva da planta · estudo de fluxos e setorização</span>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span class="credit">
+            Aprovação junto à Vigilância Sanitária conforme a RDC 50 da Anvisa.
+          </span>
+          <span class="caption">08</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 · Abertura: coordenação -->
+    <section class="page opener">
+      <img src="img/projeto-aquarela-aerea.webp" alt="Vista aérea do condomínio residencial clube entregue" />
+      <div class="shade"></div>
+      <span class="mark eyebrow">Aquarela Clube · obra entregue</span>
+      <div class="block">
+        <span class="num">02 — Coordenação e compatibilização</span>
+        <h1>Quando o projeto chega à obra sem surpresas</h1>
+        <p class="sub">
+          Gerenciamento da compatibilização entre as multidisciplinas, análise de produto e
+          acompanhamento de obra em empreendimentos residenciais de médio e alto padrão.
+        </p>
+      </div>
+    </section>
+
+    <!-- 10 · Aquarela Clube -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">03 · Análise de projeto</span>
+            <h2>Aquarela Clube</h2>
+          </div>
+          <span class="eyebrow">Magis Incorporações · 2015—2018</span>
+        </div>
+
+        <div class="split text-left">
+          <div class="col">
+            <div class="prose">
+              <p class="lead">
+                Todas as incompatibilidades foram sanadas ainda na entrega do projeto executivo.
+              </p>
+              <p>
+                Acompanhei empreendimentos da aprovação do projeto legal até a entrega da obra:
+                projeto básico e executivo, compatibilização das multidisciplinas, administração
+                do sistema de revisão e contratação dos escritórios de hidrossanitário, elétrico,
+                combate a incêndio, SPDA e modelagem BIM, com visitas periódicas à obra.
+              </p>
+              <p>
+                No Aquarela, condomínio clube com apartamentos de 56,66 a 75,53 m², respondi pelo
+                gerenciamento da compatibilização entre os escritórios envolvidos. Analisava as
+                incompatibilidades em DWG e no Navisworks e preparava um documento com todos os
+                apontamentos, apresentado em reunião com todos os envolvidos para alinhar decisões
+                e ajustes.
+              </p>
+              <p>
+                A construtora BSPar depois incorporou o projeto aos seus empreendimentos.
+              </p>
+            </div>
+            <dl class="facts cols-3">
+              <div class="fact"><dt>Apartamentos</dt><dd>56 a 75 m²</dd></div>
+              <div class="fact"><dt>Simultâneos</dt><dd>04 empreendimentos</dd></div>
+              <div class="fact"><dt>Incompatibilidades</dt><dd>100% sanadas</dd></div>
+            </dl>
+          </div>
+
+          <div class="col figure">
+            <div class="figure-body">
+              <img
+                class="photo doc"
+                src="img/projeto-aquarela-reuniao.webp"
+                alt="Reunião de alinhamento com os escritórios de projeto"
+              />
+            </div>
+            <span class="caption">Reunião de alinhamento com os escritórios de projeto</span>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span class="credit">Empreendimento da Magis Incorporações.</span>
+          <span class="caption">10</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 · Cond. Res. MOMA -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">04 · Análise de produto</span>
+            <h2>Cond. Res. MOMA</h2>
+          </div>
+          <span class="eyebrow">Magis Incorporações · 2015—2018</span>
+        </div>
+
+        <div class="split text-narrow">
+          <div class="col">
+            <div class="prose">
+              <p>
+                Cada analista respondia por quatro empreendimentos ao mesmo tempo, da concepção e
+                da viabilidade técnica ao estudo preliminar e ao projeto legal, contratando e
+                gerenciando os escritórios de arquitetura, interiores, paisagismo, sinalização e
+                acessibilidade.
+              </p>
+              <p>
+                No MOMA, de alto padrão, com três torres e apartamentos de 82 a 111 m², respondi
+                pela fase final: sinalização, ambientação das áreas comuns internas e externas,
+                compatibilização do paisagismo durante a obra e os projetos de interiores das
+                áreas comuns.
+              </p>
+              <p>
+                Também implantei o ponto de venda e o apartamento decorado e respondi pelos
+                contratos das imagens 3D e da maquete física até a entrega.
+              </p>
+            </div>
+            <dl class="facts cols-2">
+              <div class="fact"><dt>Torres</dt><dd>03</dd></div>
+              <div class="fact"><dt>Apartamentos</dt><dd>82 a 111 m²</dd></div>
+            </dl>
+          </div>
+
+          <div class="col">
+            <div class="mosaic">
+              <div class="frame">
+                <div class="box">
+                  <img class="photo" src="img/projeto-moma-gourmet.webp" alt="Área gourmet entregue" />
+                </div>
+                <span class="caption">Área gourmet das áreas comuns · entregue</span>
+              </div>
+              <div class="mosaic-pair">
+                <div class="frame">
+                  <div class="box">
+                    <img class="photo doc" src="img/projeto-moma-obra.webp" alt="A mesma área durante a execução" />
+                  </div>
+                  <span class="caption">A mesma área durante a execução</span>
+                </div>
+                <div class="frame">
+                  <div class="box">
+                    <img class="photo" src="img/projeto-moma-estar.webp" alt="Estar das áreas comuns ambientado" />
+                  </div>
+                  <span class="caption">Estar das áreas comuns · ambientado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span class="credit">
+            Empreendimento da Magis Incorporações. O paisagismo é de autoria do escritório Benedito
+            Abbud; a compatibilização em obra esteve sob minha responsabilidade.
+          </span>
+          <span class="caption">11</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 · Abertura: espaço público -->
+    <section class="page opener-band">
+      <div class="pad">
+        <div>
+          <span class="eyebrow">03 — Espaço público e retrofit</span>
+          <h1>Requalificar o que<br />a cidade já tem</h1>
+          <p class="sub lead">
+            Projetos executivos para a Secretaria de Infraestrutura de Aracati, com orçamento
+            restrito, materiais disponíveis na região e preocupação com manutenção.
+          </p>
+        </div>
+        <div class="in-block">
+          <div>
+            <span class="eyebrow">05 · Página 13</span>
+            <strong>Praça Pet e Família</strong>
+            <p>
+              Replanejamento de uma área subutilizada em praça arborizada, com espaço pet,
+              playground, pista de cooper e convivência noturna.
+            </p>
+          </div>
+          <div>
+            <span class="eyebrow">06 · Página 14</span>
+            <strong>Biblioteca Pública</strong>
+            <p>
+              Retrofit de um prédio onde funcionava uma UPA, com adequação de níveis para
+              acessibilidade e preservação das aberturas existentes.
+            </p>
+          </div>
+        </div>
+
+        <div class="band">
+          <img
+            class="photo"
+            src="img/projeto-praca-elevacao.webp"
+            alt="Corte da praça, da pista de cooper à praça de alimentação"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 · Praça Pet e Família -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">05 · Espaços públicos</span>
+            <h2>Praça Pet e Família</h2>
+          </div>
+          <span class="eyebrow">SEINFRA · Aracati — CE · 2020—2023</span>
+        </div>
+
+        <div class="split text-right">
+          <div class="col figure">
+            <div class="figure-body">
+              <img
+                class="drawing"
+                src="img/projeto-praca-planta-tratada-v2.webp"
+                alt="Planta paisagística da Praça Pet e Espaço Família"
+              />
+            </div>
+            <span class="caption">Planta paisagística · projeto de autoria própria</span>
+          </div>
+
+          <div class="col">
+            <div class="prose">
+              <p class="lead">
+                Uma área subutilizada, com árvores cujas raízes invadiam a rede de esgoto, virou
+                praça arborizada de uso diurno e noturno.
+              </p>
+              <p>
+                O terreno era ocupado por um centro de artesanato com poucas lojas e uma área
+                verde só com areia. O centro foi reconstruído em um ponto mais atrativo para as
+                vendas turísticas, e o espaço foi replanejado para atender melhor os anseios
+                locais.
+              </p>
+              <p>
+                O programa reúne um trecho bem arborizado com espaço pet, playground, pista de
+                cooper e área de convivência, em que os bares e lanchonetes próximos possam
+                colocar mesas e cadeiras à noite.
+              </p>
+              <p>
+                O orçamento era bastante restrito, o que orientou as escolhas de piso para
+                atender à região, à manutenção e à verba destinada à demanda.
+              </p>
+            </div>
+            <dl class="facts cols-3">
+              <div class="fact"><dt>Programa</dt><dd>Pet, playground e cooper</dd></div>
+              <div class="fact"><dt>Executivo</dt><dd>AutoCAD</dd></div>
+              <div class="fact"><dt>Papel</dt><dd>Autoria do projeto</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span class="credit">
+            Projeto de arquitetura de autoria própria, desenvolvido na Secretaria de Infraestrutura.
+          </span>
+          <span class="caption">13</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14 · Biblioteca Pública -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">06 · Espaços públicos</span>
+            <h2>Biblioteca Pública</h2>
+          </div>
+          <span class="eyebrow">SEINFRA · Aracati — CE · 2020—2023</span>
+        </div>
+
+        <div class="split text-narrow">
+          <div class="col">
+            <div class="prose">
+              <p class="lead">
+                Retrofit de um prédio antigo onde funcionava uma UPA.
+              </p>
+              <p>
+                Para que o edifício atendesse ao programa de necessidades de uma biblioteca, foi
+                preciso demolir e construir paredes, movimentar terra e adequar os níveis de piso
+                para acessibilidade.
+              </p>
+              <p>
+                A proposta preservou as janelas, as portas e o buganvile existente.
+              </p>
+            </div>
+            <dl class="facts cols-2">
+              <div class="fact"><dt>Uso anterior</dt><dd>UPA</dd></div>
+              <div class="fact"><dt>Intervenção</dt><dd>Retrofit acessível</dd></div>
+            </dl>
+          </div>
+
+          <div class="col">
+            <div class="duo">
+              <div class="frame">
+                <div class="box">
+                  <img
+                    class="drawing"
+                    src="img/projeto-biblioteca-proposta-tratada-v2.webp"
+                    alt="Planta da proposta para a biblioteca pública municipal"
+                  />
+                </div>
+                <span class="caption">Planta da proposta</span>
+              </div>
+              <div class="frame">
+                <div class="box">
+                  <img
+                    class="drawing"
+                    src="img/projeto-biblioteca-demolir-tratada-v2.webp"
+                    alt="Planta demolir-construir que organiza a intervenção"
+                  />
+                </div>
+                <span class="caption">Planta demolir-construir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span class="credit">
+            Projeto de arquitetura de autoria própria, desenvolvido na Secretaria de Infraestrutura.
+          </span>
+          <span class="caption">14</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15 · Residencial e interiores -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">04 · Residencial e interiores</span>
+            <h2>Projeto autoral em Revit e interiores</h2>
+          </div>
+          <span class="eyebrow">Projetos autorais · clientes particulares</span>
+        </div>
+
+        <div class="pair">
+          <div class="col">
+            <div class="shot">
+              <img class="photo" src="img/projeto-residencia-gj.webp" alt="Fachada da residência unifamiliar de dois pavimentos" />
+            </div>
+            <h3>Residência G &amp; J</h3>
+            <span class="meta">07 · Projeto em Revit · 182,96 m²</span>
+            <p>
+              Casa para um casal com dois filhos em lote de 270,78 m², com 116,17 m² no térreo e
+              66,79 m² no pavimento superior. Foi o primeiro projeto inteiro dela em Revit, e o
+              ganho apareceu em duas frentes: de um desenho de planta saem cortes, fachadas e
+              modelagem, e a extração de quantitativos tornou a conversa de custo com o cliente
+              muito mais objetiva.
+            </p>
+            <dl class="facts cols-3">
+              <div class="fact"><dt>Construída</dt><dd>182,96 m²</dd></div>
+              <div class="fact"><dt>Lote</dt><dd>270,78 m²</dd></div>
+              <div class="fact"><dt>Pavimentos</dt><dd>02</dd></div>
+            </dl>
+          </div>
+
+          <div class="col">
+            <div class="shot">
+              <img class="photo" src="img/projeto-sala-mi.webp" alt="Sala de estar com marcenaria escura e lareira" />
+            </div>
+            <h3>Sala M &amp; I</h3>
+            <span class="meta">08 · Projeto de interiores</span>
+            <p>
+              As propostas de interiores partem do cliente: na primeira reunião depois do
+              fechamento do contrato, ela faz um estudo por preferências, referências e
+              necessidades pessoais. Neste caso o pedido era um ambiente que transmitisse
+              conforto, com cores básicas e móveis escuros. O executivo saiu em AutoCAD, a
+              modelagem em SketchUp e a renderização em V-Ray.
+            </p>
+            <dl class="facts cols-3">
+              <div class="fact"><dt>Executivo</dt><dd>AutoCAD</dd></div>
+              <div class="fact"><dt>Modelagem</dt><dd>SketchUp</dd></div>
+              <div class="fact"><dt>Render</dt><dd>V-Ray</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="foot">
+          <span class="credit">
+            A imagem da Residência G &amp; J foi gerada no RErender, aplicativo de inteligência
+            artificial, para comunicar o conceito ao cliente antes do detalhamento. A Sala M &amp; I
+            é renderização de autoria própria.
+          </span>
+          <span class="caption">15</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16 · Formação e contato -->
+    <section class="page">
+      <div class="pad">
+        <div class="sheet-head">
+          <div>
+            <span class="eyebrow">05 · Formação &amp; repertório</span>
+            <h2>Formação e contato</h2>
+          </div>
+          <span class="eyebrow">Atualizado em setembro de 2026</span>
+        </div>
+
+        <div class="closing-grid">
+          <div>
+            <h4>Formação</h4>
+            <div class="entry">
+              <strong>Pós-graduação em Arquitetura Hospitalar</strong>
+              <span>Faculdade Israelita Albert Einstein · 2026—2027</span>
+            </div>
+            <div class="entry">
+              <strong>Mestre em Ciências da Cidade</strong>
+              <span>UNIFOR · 2018—2019</span>
+            </div>
+            <div class="entry">
+              <strong>Arquitetura e Urbanismo</strong>
+              <span>UNIFOR · 2001—2007</span>
+            </div>
+          </div>
+
+          <div>
+            <h4>Formação complementar</h4>
+            <div class="entry">
+              <strong>Arquitetura para a Saúde</strong>
+              <span>TAPS · 2022—2023</span>
+            </div>
+            <div class="entry">
+              <strong>Iluminação e Design de Interiores</strong>
+              <span>IPOG · 2011—2015</span>
+            </div>
+          </div>
+
+          <div>
+            <h4>Ferramentas e idiomas</h4>
+            <div class="entry">
+              <strong>AutoCAD · Revit · Navisworks</strong>
+              <span>SketchUp · MS Project · AutoDoc</span>
+            </div>
+            <div class="entry">
+              <strong>Inglês avançado</strong>
+              <span>Espanhol básico</span>
+            </div>
+          </div>
+        </div>
+
+        <dl class="track">
+          <h4 style="margin: 0">Trajetória</h4>
+          <div class="track-grid">
+            <div><dt>2023—Atual</dt><dd><b>Autônoma</b><br />Arquiteta</dd></div>
+            <div><dt>2024—2025</dt><dd><b>CDHU</b><br />Analista de Projetos</dd></div>
+            <div><dt>2020—2023</dt><dd><b>SEINFRA</b><br />Analista de Projetos</dd></div>
+            <div><dt>2015—2018</dt><dd><b>Magis Incorporações</b><br />Analista de Projetos</dd></div>
+            <div><dt>2014—2015</dt><dd><b>JVS Engenharia</b><br />Coordenadora de Projetos</dd></div>
+            <div><dt>2013—2014</dt><dd><b>JVS Engenharia</b><br />Analista de Projetos</dd></div>
+            <div><dt>2011—2012</dt><dd><b>Escritório Cézar Fiuza</b><br />Arquiteta Projetista</dd></div>
+            <div><dt>2007—2011</dt><dd><b>CRD Engenharia</b><br />Arquiteta Orçamentista</dd></div>
+          </div>
+        </dl>
+
+        <div class="contact">
+          <p class="say">
+            Disponível para projetos e posições em arquitetura para a saúde.
+          </p>
+          <div class="lines">
+            <b>julianarquitetura@gmail.com</b>
+            <b>+55 85 99909-0952</b>
+            <span class="caption">Fortaleza — CE · Brasil</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
