@@ -1362,3 +1362,258 @@ footer {
     transition-duration: .01ms !important;
   }
 }
+
+/*
+ * PDF para leitura em tela, não para papel: paisagem, sangria total e cor
+ * preservada. Cada seção ocupa uma página, como um portfólio paginado.
+ *
+ * A caixa de página em A4 paisagem mede cerca de 1122x790px de layout, mas o
+ * Chrome avalia as media queries em pontos (~842px), o que mantém ativas as
+ * regras do breakpoint de 900px. As alturas abaixo assumem os 790px de página
+ * e desfazem os empilhamentos e alturas mínimas daquele breakpoint.
+ */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    backdrop-filter: none !important;
+    text-shadow: none !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* O painel de projeto trava o body em fixed; sem isto o PDF sai com uma página. */
+  body {
+    position: static !important;
+    min-height: 0;
+    inset: auto !important;
+    padding: 0 !important;
+  }
+
+  #root {
+    min-height: 0;
+  }
+
+  /* overflow: hidden no container raiz corta o documento na primeira página. */
+  .page-shell {
+    width: 100%;
+    min-height: 0;
+    overflow: visible;
+    border-inline: 0;
+  }
+
+  /* Interação que não existe em um PDF. */
+  .site-header,
+  .grid-guides,
+  .project-panel,
+  .project-more,
+  .section-title > svg {
+    display: none !important;
+  }
+
+  /* O reveal depende de IntersectionObserver, que não roda na impressão. */
+  .reveal,
+  .reveal.active {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+}
+
+/*
+ * A composição paginada depende da página em paisagem. Se alguém imprimir em
+ * retrato, a largura cai abaixo deste limite e o documento volta a fluir
+ * normalmente, sem as alturas fixas.
+ */
+@media print and (min-width: 651px) {
+  /* Capa */
+  .hero {
+    height: 788px;
+    min-height: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 150px;
+    break-after: page;
+  }
+
+  .hero-media {
+    min-height: 0;
+  }
+
+  /* Congela o carrossel no primeiro slide para o PDF sair sempre igual. */
+  .hero-media > img {
+    display: none;
+  }
+
+  .hero-media > img:first-of-type {
+    display: block;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-stats {
+    min-height: 0;
+  }
+
+  .hero-stats article {
+    padding: 24px 30px;
+  }
+
+  /* Página-manifesto */
+  .marquee > div {
+    padding: 14px 24px;
+  }
+
+  .type-banner {
+    height: 748px;
+    min-height: 0;
+    padding: 40px 20px;
+    break-after: page;
+  }
+
+  .type-banner > svg {
+    top: 42px;
+  }
+
+  /* Apresentação: volta às duas colunas do layout amplo */
+  .intro {
+    height: 788px;
+    grid-template-columns: 4fr 8fr;
+  }
+
+  .skills {
+    min-height: 0;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+    padding: 40px;
+  }
+
+  .portrait {
+    margin-bottom: 24px;
+  }
+
+  .portrait img {
+    height: 340px;
+  }
+
+  .bio {
+    min-height: 0;
+    padding: 48px 56px;
+  }
+
+  .bio h2 {
+    margin-bottom: 34px;
+  }
+
+  /* Abertura da seção de projetos em página própria */
+  .work {
+    padding-top: 0;
+    break-before: page;
+  }
+
+  .section-title {
+    height: 788px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 40px;
+    text-align: center;
+    break-after: page;
+  }
+
+  .section-title h2 {
+    font-size: 64px;
+  }
+
+  /* Dois projetos por página, preenchendo a página inteira */
+  .project-row {
+    height: 394px;
+    min-height: 0;
+    break-inside: avoid;
+  }
+
+  .project-copy {
+    padding: 40px 46px;
+  }
+
+  .project-image {
+    margin: 26px;
+  }
+
+  /* Trajetória: volta às três colunas para a lista caber na página */
+  .career {
+    height: 633px;
+    margin-top: 0;
+    grid-template-columns: 4fr 4fr 4fr;
+    break-before: page;
+  }
+
+  .career-title,
+  .career-summary {
+    min-height: 0;
+    padding: 42px;
+  }
+
+  .experience-list {
+    grid-column: auto;
+    border-top: 0;
+    padding: 20px 32px;
+  }
+
+  .experience-list article {
+    padding: 14px 0;
+    break-inside: avoid;
+  }
+
+  .image-strip {
+    height: 155px;
+  }
+
+  .image-strip img {
+    height: 100%;
+  }
+
+  .credentials {
+    display: flex;
+    height: 788px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    break-before: page;
+  }
+
+  .credentials-grid article {
+    min-height: 420px;
+    padding: 38px;
+  }
+
+  .credentials-grid h3 {
+    margin-top: 34px;
+  }
+
+  footer {
+    min-height: 791px;
+    padding: 84px 48px 0;
+    break-before: page;
+  }
+
+  .footer-cta h2 {
+    margin-bottom: 36px;
+    font-size: 62px;
+  }
+
+  .footer-divider {
+    margin: 64px 0 42px;
+  }
+
+  .footer-wordmark {
+    margin: 56px 0 0;
+  }
+}
