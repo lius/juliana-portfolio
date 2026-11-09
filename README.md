@@ -3,7 +3,7 @@
 Portfólio profissional de Juliana Romero, arquiteta com experiência em
 arquitetura hospitalar, reformas, compatibilização e gestão de projetos.
 
-Reúne oito trabalhos selecionados — projetos para saúde, residências em Revit,
+Reúne nove trabalhos selecionados — projetos para saúde, residências em Revit,
 interiores, análise de produto, análise de projeto e espaços públicos — com
 plantas, fotos de obra e créditos de autoria, além do currículo em PDF nas
 versões titular e básica.

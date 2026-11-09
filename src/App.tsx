@@ -10,6 +10,11 @@ import imagingPlan from './assets/projeto-imagem-planta-aprovada.webp'
 import imagingPerspective from './assets/projeto-imagem-perspectiva.webp'
 import residenceGJ from './assets/projeto-residencia-gj.webp'
 import livingMI from './assets/projeto-sala-mi.webp'
+import clinicOffice from './assets/projeto-silvana-consultorio.webp'
+import clinicReception from './assets/projeto-silvana-recepcao.webp'
+import clinicRooms from './assets/projeto-silvana-consultorios.webp'
+import clinicCare from './assets/projeto-silvana-atendimento.webp'
+import clinicLavabo from './assets/projeto-silvana-lavabo.webp'
 import momaGourmet from './assets/projeto-moma-gourmet.webp'
 import momaSite from './assets/projeto-moma-obra.webp'
 import momaLounge from './assets/projeto-moma-estar.webp'
@@ -171,6 +176,34 @@ const projects: Projeto[] = [
   },
   {
     number: '05',
+    category: 'Projeto de interiores',
+    title: 'Clínica Silvana Bandeira',
+    description:
+      'Estudo preliminar de uma clínica de fonoaudiologia, com recepção, consultórios, atendimento individual e lavabo.',
+    meta: 'SHE · Sala 09 · Torre 03 · Eusébio — CE',
+    image: clinicOffice,
+    alt: 'Consultório com boiserie branca, mesa de mármore e o logo da clínica',
+    imageNote: 'Estudo preliminar',
+    facts: [
+      ['Recepção', 'jardim vertical'],
+      ['Consultórios', 'divisória de palhinha'],
+      ['Lavabo', 'bancada e espelho'],
+    ],
+    narrative: [
+      'A clínica ocupa a Sala 09 da Torre 03 do SHE, em Eusébio, e foi pensada para o atendimento de fonoaudiologia da Silvana Bandeira.',
+      'A recepção reúne a espera e o jardim vertical. Os consultórios seguem a mesma linguagem — mesa, boiserie e paleta clara — e se separam por uma divisória de palhinha, que deixa ver o atendimento individual ao lado.',
+      'O lavabo fecha o percurso com papel floral, espelho oval e bancada branca.',
+    ],
+    gallery: [
+      { src: clinicReception, caption: 'Recepção, com o jardim vertical' },
+      { src: clinicRooms, caption: 'Consultórios, vistos da janela, com a divisória de palhinha' },
+      { src: clinicCare, caption: 'Atendimento individual' },
+      { src: clinicLavabo, caption: 'Lavabo, vista da bancada' },
+    ],
+    credit: 'Estudo preliminar de interiores, de autoria própria, para a clínica de fonoaudiologia Silvana Bandeira.',
+  },
+  {
+    number: '06',
     category: 'Análise de produto',
     title: 'Cond. Res. MOMA',
     description:
@@ -197,7 +230,7 @@ const projects: Projeto[] = [
       'Empreendimento da Magis Incorporações. O projeto de paisagismo é de autoria do escritório Benedito Abbud, e a compatibilização em obra esteve sob minha responsabilidade.',
   },
   {
-    number: '06',
+    number: '07',
     category: 'Análise de projeto',
     title: 'Aquarela Clube',
     description:
@@ -222,7 +255,7 @@ const projects: Projeto[] = [
     credit: 'Empreendimento da Magis Incorporações.',
   },
   {
-    number: '07',
+    number: '08',
     category: 'Espaços públicos',
     title: 'Praça Pet e Família',
     description:
@@ -248,7 +281,7 @@ const projects: Projeto[] = [
     credit: 'Projeto de arquitetura de autoria própria, desenvolvido na Secretaria de Infraestrutura.',
   },
   {
-    number: '08',
+    number: '09',
     category: 'Espaços públicos',
     title: 'Biblioteca Pública',
     description:
@@ -296,7 +329,7 @@ const stripImages = [
   { src: residenceGJ, alt: '' },
   { src: momaGourmet, alt: '' },
   { src: pracaPlan, alt: '' },
-  { src: momaLounge, alt: '' },
+  { src: clinicOffice, alt: '' },
 ]
 
 function App() {
