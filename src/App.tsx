@@ -177,7 +177,7 @@ const projects: Projeto[] = [
   {
     number: '05',
     category: 'Projeto de interiores',
-    title: 'Clínica Silvana Bandeira',
+    title: 'Clínica de Fonoaudiologia',
     description:
       'Estudo preliminar de uma clínica de fonoaudiologia, com recepção, consultórios, atendimento individual e lavabo.',
     meta: 'SHE · Sala 09 · Torre 03 · Eusébio — CE',
@@ -190,7 +190,7 @@ const projects: Projeto[] = [
       ['Lavabo', 'bancada e espelho'],
     ],
     narrative: [
-      'A clínica ocupa a Sala 09 da Torre 03 do SHE, em Eusébio, e foi pensada para o atendimento de fonoaudiologia da Silvana Bandeira.',
+      'A clínica ocupa a Sala 09 da Torre 03 do SHE, em Eusébio, e foi pensada para o atendimento de fonoaudiologia.',
       'A recepção reúne a espera e o jardim vertical. Os consultórios seguem a mesma linguagem — mesa, boiserie e paleta clara — e se separam por uma divisória de palhinha, que deixa ver o atendimento individual ao lado.',
       'O lavabo fecha o percurso com papel floral, espelho oval e bancada branca.',
     ],
@@ -200,7 +200,7 @@ const projects: Projeto[] = [
       { src: clinicCare, caption: 'Atendimento individual' },
       { src: clinicLavabo, caption: 'Lavabo, vista da bancada' },
     ],
-    credit: 'Estudo preliminar de interiores, de autoria própria, para a clínica de fonoaudiologia Silvana Bandeira.',
+    credit: 'Estudo preliminar de interiores, de autoria própria.',
   },
   {
     number: '06',
